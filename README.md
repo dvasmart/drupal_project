@@ -1,3 +1,2 @@
-user: test_user
-password: 123
-email: test@test.com
+Example of instaled project on Drupal 9
+
