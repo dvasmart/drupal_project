@@ -764,30 +764,22 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-$databases['default']['default'] = array (
+$databases['default']['default'] = [
   'database' => getenv('MYSQL_DB_NAME'),
   'username' => getenv('MYSQL_USER'),
   'password' => getenv('MYSQL_PASS'),
-  'prefix' => '',
+  'prefix' => getenv('MYSQL_PREFIX'),
   'host' => getenv('MYSQL_HOST'),
   'port' => getenv('MYSQL_PORT'),
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
+  'driver' => getenv('MYSQL_DRIVER'),
+];
+
 $settings['hash_salt'] = getenv('HASH_SALT');
 $settings['config_sync_directory'] = '../config';
 $settings['trusted_host_patterns'][] = getenv('PROJECT_BASE_URL');
 $settings['skip_permissions_hardening'] = TRUE;
+
 if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-  include $app_root . '/' . $site_path . '/settings.local.php';
-}$databases['default']['default'] = array (
-  'database' => 'test',
-  'username' => 'user',
-  'password' => 'pass',
-  'prefix' => '',
-  'host' => 'database',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-$settings['hash_salt'] = 'ysTyII2AtIxEA389jJMzHIwXxAwVt_q9rWJQTSRqHpzmfJ6UtQ_tBlLv5-9yr4ufAYdplurECQ';
+  include $app_root . '/' . $site_path . '/settings.local.php';  
+}
