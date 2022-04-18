@@ -2,7 +2,7 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
 uuid: 949f87c5-d9cc-4b0f-9013-dfae2409dac5
-name: MySite
+name: Somesite
 mail: admin@example.com
 slogan: ''
 page:
