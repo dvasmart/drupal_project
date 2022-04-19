@@ -1,3 +1,5 @@
+version: '3.3'
+
 services:
   php:
     build: .
@@ -15,6 +17,7 @@ services:
 
   database:
     image: mariadb
+    container_name: database
     restart: always
     volumes:
       - './mysql_db:/var/lib/mysql'
@@ -27,12 +30,14 @@ services:
   phpmyadmin:
     image: phpmyadmin
     restart: always
+    links:
+      - database
     environment:
-      - PMA_ARBITRARY=1
-      - MYSQL_USER=${MYSQL_USER}
-      - MYSQL_PASSWORD=${MYSQL_PASS}
+      - PMA_HOST=${PMA_HOST}
+      - PMA_PORT=${PMA_PORT}
+      - PMA_ARBITRARY=${PMA_ARBITRARY}
     labels:
-      - "traefik.http.routers.phpmyadmin.rule=Host(`phpmyadmin.${PROJECT_BASE_URL}`)"
+      - "traefik.http.routers.phpmyadmin.rule=Host(`${PMA_URL}`)"
       - "traefik.http.services.phpmyadmin.loadbalancer.server.port=80"
 
   traefik:
