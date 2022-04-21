@@ -1,0 +1,9 @@
+uuid: 9481605e-399f-43c2-8026-86acee7cd6ee
+langcode: en
+status: true
+dependencies: {  }
+id: 'test role'
+label: 'Test role'
+weight: 4
+is_admin: null
+permissions: {  }
