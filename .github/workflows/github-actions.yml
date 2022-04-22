@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Prepare config
-        run: cp .env.dist .env && cp settings.php /web/sites/default/ 
+        run: cp .env.dist .env
       - name: Build
         run: make up
       - name: Pre-Install
