@@ -3,6 +3,6 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-20
-    steps:
-      - name: Run helllooo
+    steps:      
       - run: echo "Hello, world"
+      - name: Run helllooo
