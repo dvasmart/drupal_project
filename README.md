@@ -1,2 +1,3 @@
-Example of instaled project on Drupal 9
+Example of installed project on Drupal 9
 
+Installed from .zip

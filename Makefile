@@ -2,7 +2,7 @@
 
 include .env
 
-default: install
+default: up
 
 build:
 	docker-compose build
