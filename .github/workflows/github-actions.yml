@@ -4,14 +4,23 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Prepare config
-        run: cp .env.dist .env
+      - name:
+        run:
+      - uses: actions/checkout@v2      
       - name: Build
         run: make up
-      - name: Pre-Install
-        run: docker-compose exec -T --user=root php bash -c 'chown -R www-data:www-data /var/www'
-      - name: Install
-        run: make install
+      - name: Prepare config
+        run: cp .env.dist .env
+        run: mkdir web
+        run: cp composer.json composer.lock web/
+          
+      # - name: Pre-Install
+      #   run: docker-compose exec -T --user=root php bash -c 'chown -R www-data:www-data /var/www'
+      - name: composer_install
+        run: make composer_install
+      - name: Copy settings
+        run: cp settings.php web/sites/default/
+      - name: site_install
+        run: make site_install
       - name: Test
         run: make test
