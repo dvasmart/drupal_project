@@ -4,8 +4,6 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name:
-        run:
       - uses: actions/checkout@v2      
       - name: Build
         run: make up
@@ -13,9 +11,6 @@ jobs:
         run: cp .env.dist .env
         run: mkdir web
         run: cp composer.json composer.lock web/
-          
-      # - name: Pre-Install
-      #   run: docker-compose exec -T --user=root php bash -c 'chown -R www-data:www-data /var/www'
       - name: composer_install
         run: make composer_install
       - name: Copy settings
