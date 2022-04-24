@@ -9,7 +9,9 @@ jobs:
         run: make up
       - name: Prepare config
         run: cp .env.dist .env
+      - name: mkdir_web
         run: mkdir web
+      - name: create composer files
         run: cp composer.json composer.lock web
       - name: composer_install
         run: make composer_install
