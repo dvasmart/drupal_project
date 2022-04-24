@@ -4,11 +4,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2      
+      - uses: actions/checkout@v2
+      - name: copy env
+        run: cp .env.dist .env
       - name: Build
         run: make up
-      - name: Prepare config
-        run: cp .env.dist .env
       - name: mkdir_web
         run: mkdir web
       - name: create composer files
