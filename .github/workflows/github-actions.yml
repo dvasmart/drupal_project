@@ -10,7 +10,7 @@ jobs:
       - name: Prepare config
         run: cp .env.dist .env
         run: mkdir web
-        run: cp composer.json composer.lock web/
+        run: cp composer.json composer.lock web
       - name: composer_install
         run: make composer_install
       - name: Copy settings
