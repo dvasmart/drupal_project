@@ -17,7 +17,7 @@ jobs:
       - name: create composer files
         run: cp composer.json composer.lock web
       - name: debug
-        run: pwd && ls -la && whoami && id && docker-compose exec -T php bash -c 'pwd && ls -la && whoami && id'
+        run: pwd && ls -la && whoami && id && docker-compose exec -T php bash -c 'pwd && ls -la && whoami && id' && id systemd-coredump
       - name: composer_install
         run: make composer_install
       - name: Copy settings

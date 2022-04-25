@@ -28,7 +28,7 @@ RUN mkdir /home/vitalii \
     && usermod  --uid 1001 -d /home/vitalii vitalii \
     && groupmod --gid 1001 vitalii
 
-RUN groupadd -r docker \
+RUN groupadd -r -g 121 docker \
     && usermod -aG docker vitalii
 
 RUN groupadd -r database \
