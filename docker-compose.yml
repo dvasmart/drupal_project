@@ -19,8 +19,8 @@ services:
     image: mariadb
     container_name: database
     restart: always
-    volumes:
-      - './mysql_db:/var/lib/mysql'
+    # volumes:
+    #   - './mysql_db:/var/lib/mysql'
     environment:
       - MARIADB_ROOT_PASSWORD=admin
       - MARIADB_DATABASE=${MYSQL_DB_NAME}

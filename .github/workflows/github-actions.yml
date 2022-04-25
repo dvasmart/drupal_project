@@ -7,25 +7,25 @@ jobs:
       - uses: actions/checkout@v2          
       - name: copy env
         run: cp .env.dist .env      
-      - name: Build
+      - name: Make up
         run: make up
-      - name: mkdir_web
-        run: mkdir web
       - name: Pre-Install
         run: docker-compose exec -T --user=root php bash -c 'chown -R vitalii:vitalii /var/www'
+      - name: mkdir_web
+        run: mkdir web    
        
       - name: create composer files
         run: cp composer.json composer.lock web
       - name: debug
-        run: pwd && ls -la && whoami && id && docker-compose exec -T php bash -c 'pwd && ls -la && whoami'
+        run: pwd && ls -la && whoami && id && docker-compose exec -T php bash -c 'pwd && ls -la && whoami && id'
       - name: composer_install
         run: make composer_install
       - name: Copy settings
         run: cp settings.php web/sites/default/ 
         # && mkdir web/sites/www/ && cp settings.php web/sites/www/
 
-      - name: list
-        run: make list
+      # - name: list
+      #   run: make list
 
       - name: site_install
         run: make site_install_2
