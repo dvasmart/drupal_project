@@ -23,10 +23,11 @@ RUN echo "memory_limit=256M" > /usr/local/etc/php/conf.d/docker-php-ext-custom.i
 
 COPY vhost.conf /etc/apache2/sites-enabled/000-default.conf
 
-RUN mkdir /home/www-data \
-    && usermod  --uid 1000 -d /home/www-data www-data \
-    && groupmod --gid 1000 www-data
+RUN mkdir /home/vitalii \
+    && adduser vitalii \
+    && usermod  --uid 1000 -d /home/vitalii vitalii \
+    && groupmod --gid 1000 vitalii    
 
-USER www-data
+USER vitalii
 
 EXPOSE 80
