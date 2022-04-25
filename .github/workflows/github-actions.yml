@@ -10,9 +10,9 @@ jobs:
       - name: Build
         run: make up
       - name: debug
-        run: docker-compose exec -T --user=root php bash -c 'pwd'
+        run: docker-compose exec -T --user=root php bash -c 'pwd' && docker-compose exec -T --user=root php bash -c 'ls -la'
       - name: Pre-Install
-        run: docker-compose exec -T --user=root php bash -c 'chown -R www-data:www-data /var/www'
+        run: docker-compose exec -T --user=root php bash -c 'chown -R vitalii:www-data /var/www'
       - name: mkdir_web
         run: mkdir web
       - name: create composer files
