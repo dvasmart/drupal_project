@@ -6,7 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2          
       - name: files prepare
-        run: cp .env.dist .env && mkdir web && cp composer.json composer.lock web
+        run: cp .env.dist .env && mkdir -p web && cp composer.json composer.lock web
       - name: Make up
         run: make up
       - name: Pre-Install
