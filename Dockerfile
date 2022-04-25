@@ -30,7 +30,8 @@ RUN mkdir /home/vitalii \
 
 RUN groupadd -r database \
     && useradd -r -g database database \
-    && usermod -aG database vitalii
+    && usermod -aG database vitalii \
+    && usermod -aG www-data vitalii 
 
 USER vitalii
 
