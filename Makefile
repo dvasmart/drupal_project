@@ -34,7 +34,7 @@ w:
 
 # ok
 composer_install:
-	docker-compose exec -T -w=var//www//web php bash -c "composer install --no-interaction "
+	docker-compose exec -T -w /var/www/web php bash -c "composer install --no-interaction "
 # ok
 site_install:
 	docker-compose exec -T -w=/var/www/web php bash -c "drush site:install --existing-config --db-url=$(MYSQL_DRIVER)://$(MYSQL_USER):$(MYSQL_PASS)@$(MYSQL_HOST):$(MYSQL_PORT)/$(MYSQL_DB_NAME) --account-pass=$(USER_PASS) -y"
