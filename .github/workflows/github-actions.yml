@@ -22,7 +22,11 @@ jobs:
         run: make composer_install
       - name: Copy settings
         run: cp settings.php web/sites/default/ && mkdir web/sites/www/ && cp settings.php web/sites/www/
+
+      - name: list
+        run: make list
+
       - name: site_install
-        run: make site_install
+        run: make site_install_2
       - name: Test
         run: make test

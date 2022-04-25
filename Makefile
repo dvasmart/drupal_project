@@ -25,7 +25,7 @@ cli:
 test:
 	docker-compose exec -T php curl 0.0.0.0:80 -H "Host: $(PROJECT_BASE_URL)" --write-out %{http_code} --silent --output /dev/null
 list:
-	docker-compose exec -T -w=/var/www/web php bash -c "drush list"
+	docker-compose exec -T -w /var/www/web php bash -c "drush list"
 
 q:
 	docker-compose exec -T -w=/var/www/web php bash -c "drush config:export --destination=../config/"
@@ -52,6 +52,9 @@ i:
 	docker-compose exec -T -w /var/www/web php bash -c 'drush user-add-role "administrator" "Benjamin Franklin"'
 help:
 	docker-compose exec -T -w /var/www/web php bash -c "pwd"
+
+site_install_2:
+	docker-compose exec -T -w /var/www/web php bash -c "drush site:install --db-url=mysql://user:pass@$database:3306/test --account-pass=123 -y"
 
 
 
