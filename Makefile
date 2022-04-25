@@ -54,7 +54,7 @@ help:
 	docker-compose exec -T -w /var/www/web php bash -c "pwd"
 
 site_install_2:
-	docker-compose exec -T -w /var/www/web php bash -c "drush site:install --db-url=mysql://user:pass@$database:3306/test --account-pass=123 -y"
+	docker-compose exec -T -w /var/www/web php bash -c "drush site:install --db-url=mysql://user:pass@database:3306/test --account-pass=123 -y"
 
 
 
