@@ -7,7 +7,7 @@ jobs:
       - uses: actions/checkout@v2          
       - name: Files prepare
         run: cp .env.dist .env && mkdir -p web && cp composer.json composer.lock web
-      - name: Make up
+      - name: Build
         run: make up
       - name: Permissions giving
         run: docker-compose exec -T --user=root php bash -c 'usermod --uid 1001 vitalii && groupmod --gid 1001 vitalii && chown -R vitalii:vitalii /var/www' 
@@ -22,7 +22,11 @@ jobs:
       # - name: list
       #   run: make list
 
-      - name: site_install
+      - name: Site install
         run: make site_install
+      - name: Create drush config
+        run: make drush_folder
+      - name: Create test user
+        run: make create_user
       - name: Test
         run: make test
