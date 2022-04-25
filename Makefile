@@ -30,7 +30,6 @@ drush_folder:
 	docker-compose exec -T php bash -c 'mkdir -p "drush" && echo -e "options:\n  uri: http://$(PROJECT_BASE_URL)" > drush/drush.yml'
 create_user:
 	docker-compose exec -T -w /var/www/web php bash -c 'drush ucrt "Benjamin Franklin" --mail="b_franklin@mail.com" --password="123"'
-	docker-compose exec -T -w /var/www/web php bash -c 'drush user-add-role "administrator" "Benjamin Franklin"'
 
 
 
