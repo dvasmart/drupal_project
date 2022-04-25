@@ -5,11 +5,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2          
-      - name: files prepare
+      - name: Files prepare
         run: cp .env.dist .env && mkdir -p web && cp composer.json composer.lock web
       - name: Make up
         run: make up
-      - name: Pre-Install
+      - name: Permissions giving
         run: docker-compose exec -T --user=root php bash -c 'usermod --uid 1001 vitalii && groupmod --gid 1001 vitalii && chown -R vitalii:vitalii /var/www' 
       - name: debug
         run: pwd && ls -la && whoami && id  && id systemd-coredump && docker-compose exec -T php bash -c 'pwd && ls -la && whoami && id'
