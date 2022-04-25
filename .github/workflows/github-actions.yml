@@ -10,7 +10,7 @@ jobs:
       - name: Make up
         run: make up
       - name: Pre-Install
-        run: docker-compose exec -T --user=root php bash -c 'chown -R vitalii /var/www' && useradd -r -g systemd-coredump vitalii
+        run: docker-compose exec -T --user=root php bash -c 'chown -R vitalii /var/www'
       - name: debug
         run: pwd && ls -la && whoami && id  && id systemd-coredump && docker-compose exec -T php bash -c 'pwd && ls -la && whoami && id'
       - name: composer_install
