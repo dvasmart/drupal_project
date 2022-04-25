@@ -11,17 +11,10 @@ jobs:
         run: make up
       - name: Permissions giving
         run: docker-compose exec -T --user=root php bash -c 'usermod --uid 1001 vitalii && groupmod --gid 1001 vitalii && chown -R vitalii:vitalii /var/www' 
-      - name: debug
-        run: pwd && ls -la && whoami && id  && id systemd-coredump && docker-compose exec -T php bash -c 'pwd && ls -la && whoami && id'
       - name: Сomposer install
         run: make composer_install
       - name: Copy settings
-        run: cp settings.php web/sites/default/ 
-        # && mkdir web/sites/www/ && cp settings.php web/sites/www/
-
-      # - name: list
-      #   run: make list
-
+        run: cp settings.php web/sites/default/
       - name: Site install
         run: make site_install
       - name: Create drush config

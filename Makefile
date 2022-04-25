@@ -36,7 +36,7 @@ composer_install:
 	docker-compose exec -T -w /var/www/web php bash -c "composer install --no-interaction "
 # ok
 site_install:
-	docker-compose exec -T -w /var/www/web php bash -c "drush site:install  --existing-config --db-url=$(MYSQL_DRIVER)://$(MYSQL_USER):$(MYSQL_PASS)@$(MYSQL_HOST):$(MYSQL_PORT)/$(MYSQL_DB_NAME) --account-pass=$(USER_PASS) -y"
+	docker-compose exec -T -w /var/www/web php bash -c "drush site:install --existing-config --db-url=$(MYSQL_DRIVER)://$(MYSQL_USER):$(MYSQL_PASS)@$(MYSQL_HOST):$(MYSQL_PORT)/$(MYSQL_DB_NAME) --account-pass=$(USER_PASS) -y"
 # ok
 test:
 	docker-compose exec -T php curl 0.0.0.0:80 -H "Host: $(PROJECT_BASE_URL)" --write-out %{http_code} --silent --output /dev/null
