@@ -21,7 +21,7 @@ jobs:
       - name: composer_install
         run: make composer_install
       - name: Copy settings
-        run: cp settings.php web/sites/default/
+        run: cp settings.php web/sites/default/ && cp settings.php web/sites/www/settings.php
       - name: site_install
         run: make site_install
       - name: Test
