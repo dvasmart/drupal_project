@@ -777,7 +777,6 @@ $databases['default']['default'] = [
 
 $settings['hash_salt'] = getenv('HASH_SALT');
 $settings['config_sync_directory'] = '../config';
-// $config_directories['sync'] = '../config';
 $settings['trusted_host_patterns'][] = getenv('PROJECT_BASE_URL');
 $settings['skip_permissions_hardening'] = TRUE;
 
