@@ -15,9 +15,8 @@ stop:
 start:
 	docker-compose start
 cli:
+	docker-compose exec -w /var/www/web php bash -c "drush list"
 	docker-compose exec -w /var/www/web php bash
-list:
-	docker-compose exec -T -w /var/www/web php bash -c "drush list"
 cache_clear:
 	docker-compose exec -T -w=/var/www/web php bash -c "drush cache:clear drush"
 composer_install:
