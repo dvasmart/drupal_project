@@ -6,11 +6,11 @@ jobs:
     steps:
       - uses: actions/checkout@v2          
       - name: copy env
-        run: cp .env.dist .env
-      # - name: help
-      #   run: make help
+        run: cp .env.dist .env      
       - name: Build
         run: make up
+      - name: debug
+        run: docker-compose exec -T --user=root php bash -c 'pwd'
       - name: Pre-Install
         run: docker-compose exec -T --user=root php bash -c 'chown -R www-data:www-data /var/www'
       - name: mkdir_web
