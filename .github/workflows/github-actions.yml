@@ -12,12 +12,12 @@ jobs:
       - name: mkdir_web
         run: mkdir web
       - name: Pre-Install
-        run: docker-compose exec -T --user=root php bash -c 'chgrp -R `whoami` /var/www'
+        run: docker-compose exec -T --user=root php bash -c 'chown -R vitalii:vitalii /var/www'
        
       - name: create composer files
         run: cp composer.json composer.lock web
       - name: debug
-        run: pwd && ls -la && whoami && id && docker-compose exec -T php bash -c 'pwd && ls -la && whoami' && 'cd web && la -ls'
+        run: pwd && ls -la && whoami && id && docker-compose exec -T php bash -c 'pwd && ls -la && whoami'
       - name: composer_install
         run: make composer_install
       - name: Copy settings
