@@ -4,11 +4,11 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: help
-        run: make help
+      - uses: actions/checkout@v2      
       - name: copy env
         run: cp .env.dist .env
+      - name: help
+        run: make help
       - name: Build
         run: make up
       - name: mkdir_web
