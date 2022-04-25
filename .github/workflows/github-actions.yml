@@ -4,15 +4,15 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - name: Pre-Install
-        run: docker-compose exec -T --user=root php bash -c 'chown -R www-data:www-data /var/www'    
+      - uses: actions/checkout@v2          
       - name: copy env
         run: cp .env.dist .env
       # - name: help
       #   run: make help
       - name: Build
         run: make up
+      - name: Pre-Install
+        run: docker-compose exec -T --user=root php bash -c 'chown -R vitalii:vitalii /var/www'
       - name: mkdir_web
         run: mkdir web
       - name: create composer files
