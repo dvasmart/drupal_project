@@ -249,7 +249,6 @@ $databases = [];
  *   $settings['hash_salt'] = file_get_contents('/home/example/salt.txt');
  * @endcode
  */
-$settings['hash_salt'] = 'lMbrTOpFMal946LRsv90vTOmD8F39JS32LEbX2144uy2eyBizzWqRV5IuuJZ5w7pAawjySorjw';
 
 /**
  * Deployment identifier.
@@ -765,18 +764,23 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-#
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
-$databases['default']['default'] = array (
-  'database' => 'test',
-  'username' => 'user',
-  'password' => 'pass',
-  'prefix' => '',
-  'host' => 'database',
-  'port' => '3306',
+$databases['default']['default'] = [
+  'database' => getenv('MYSQL_DB_NAME'),
+  'username' => getenv('MYSQL_USER'),
+  'password' => getenv('MYSQL_PASS'),
+  'prefix' => getenv('MYSQL_PREFIX'),
+  'host' => getenv('MYSQL_HOST'),
+  'port' => getenv('MYSQL_PORT'),
   'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-$settings['config_sync_directory'] = 'sites/default/files/config_ZR8BjHON47ZX49uVOIkEdbrYte4-JnP0dSwojoIOyw54wsSOWNO6HLPG9jZWXgBtD3FlI9-amA/sync';
+  'driver' => getenv('MYSQL_DRIVER'),
+];
+
+$settings['hash_salt'] = getenv('HASH_SALT');
+$settings['config_sync_directory'] = '../config';
+// $config_directories['sync'] = '../config';
+$settings['trusted_host_patterns'][] = getenv('PROJECT_BASE_URL');
+$settings['skip_permissions_hardening'] = TRUE;
+
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';  
+}

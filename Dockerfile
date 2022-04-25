@@ -31,9 +31,9 @@ RUN mkdir /home/vitalii \
 # RUN groupadd -r -g 121 docker \
 #     && usermod -aG docker vitalii
 
-RUN groupadd -r -g 999 database \
-    && useradd -r -g database database \
-    && usermod -aG database vitalii 
+# RUN groupadd -r -g 999 database \
+#     && useradd -r -g database database \
+#     && usermod -aG database vitalii 
     # && usermod -aG www-data vitalii
     
 
