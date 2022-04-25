@@ -25,8 +25,8 @@ COPY vhost.conf /etc/apache2/sites-enabled/000-default.conf
 
 RUN mkdir /home/vitalii \
     && adduser vitalii \
-    && usermod  --uid 1001 -d /home/vitalii vitalii \
-    && groupmod --gid 1001 vitalii
+    && usermod  --uid 1000 -d /home/vitalii vitalii \
+    && groupmod --gid 1000 vitalii
 
 # RUN groupadd -r -g 121 docker \
 #     && usermod -aG docker vitalii
