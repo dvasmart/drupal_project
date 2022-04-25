@@ -31,7 +31,8 @@ RUN mkdir /home/vitalii \
 RUN groupadd -r database \
     && useradd -r -g database database \
     && usermod -aG database vitalii \
-    && usermod -aG www-data vitalii 
+    && usermod -aG www-data vitalii \
+    && usermod -aG docker vitalii
 
 USER vitalii
 

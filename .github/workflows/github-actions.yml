@@ -28,6 +28,6 @@ jobs:
       #   run: make list
 
       - name: site_install
-        run: make site_install_2
+        run: make site_install
       - name: Test
         run: make test
