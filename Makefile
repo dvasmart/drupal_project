@@ -50,6 +50,8 @@ u:
 # ok
 i:
 	docker-compose exec -T -w=/var/www/web php bash -c 'drush user-add-role "administrator" "Benjamin Franklin"'
+help:
+	docker-compose exec -T -w=/var/www/web php bash -c "pwd"
 
 
 
