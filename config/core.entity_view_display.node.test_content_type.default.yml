@@ -1,0 +1,28 @@
+uuid: 97c16de6-a9a5-49b5-b5e5-1fb084e5a047
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.test_content_type.body
+    - node.type.test_content_type
+  module:
+    - text
+    - user
+id: node.test_content_type.default
+targetEntityType: node
+bundle: test_content_type
+mode: default
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }

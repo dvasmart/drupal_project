@@ -1,0 +1,19 @@
+uuid: c031fee9-083d-44a3-8f63-05f59a4426a6
+langcode: en
+status: true
+dependencies:
+  module:
+    - menu_ui
+third_party_settings:
+  menu_ui:
+    available_menus:
+      - footer
+      - main
+    parent: 'main:'
+name: 'Test content type'
+type: test_content_type
+description: 'Phasellus id felis velit. Phasellus non elit dolor. Etiam vel ultrices dolor. Suspendisse ornare, erat vitae venenatis posuere, felis felis pretium lacus, id auctor risus arcu sed tellus. Donec vestibulum lobortis justo, sit amet aliquam augue bibendum ultrices. Nullam placerat quam in neque pretium, in luctus purus sagittis. In eu eros quis sapien faucibus posuere sed a nisi.'
+help: ''
+new_revision: true
+preview_mode: 1
+display_submitted: true

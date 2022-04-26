@@ -8,11 +8,23 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.field_test_boolean_field
+    - field.field.node.article.field_test_comments_field
+    - field.field.node.article.field_test_content_field
+    - field.field.node.article.field_test_date_field
+    - field.field.node.article.field_test_email_field
+    - field.field.node.article.field_test_link_field
+    - field.field.node.article.field_test_list_float_field
+    - field.field.node.article.field_test_number_integer_field
+    - field.field.node.article.field_test_timestamp_field
     - image.style.large
     - node.type.article
   module:
     - comment
+    - datetime
     - image
+    - link
+    - options
     - text
     - user
 _core:
@@ -54,6 +66,87 @@ content:
       link: true
     third_party_settings: {  }
     weight: 10
+    region: content
+  field_test_boolean_field:
+    type: boolean
+    label: above
+    settings:
+      format: default
+      format_custom_false: ''
+      format_custom_true: ''
+    third_party_settings: {  }
+    weight: 111
+    region: content
+  field_test_comments_field:
+    type: comment_default
+    label: above
+    settings:
+      view_mode: default
+      pager_id: 0
+    third_party_settings: {  }
+    weight: 112
+    region: content
+  field_test_content_field:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 119
+    region: content
+  field_test_date_field:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 113
+    region: content
+  field_test_email_field:
+    type: basic_string
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 114
+    region: content
+  field_test_link_field:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 115
+    region: content
+  field_test_list_float_field:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 117
+    region: content
+  field_test_number_integer_field:
+    type: number_integer
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    weight: 118
+    region: content
+  field_test_timestamp_field:
+    type: timestamp
+    label: above
+    settings:
+      date_format: medium
+      custom_date_format: ''
+      timezone: ''
+    third_party_settings: {  }
+    weight: 116
     region: content
   links:
     settings: {  }

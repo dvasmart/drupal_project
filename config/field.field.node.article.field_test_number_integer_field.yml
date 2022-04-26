@@ -1,0 +1,25 @@
+uuid: 0c855cef-aaac-4185-81e9-ea14166d7a84
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test_number_integer_field
+    - node.type.article
+id: node.article.field_test_number_integer_field
+field_name: field_test_number_integer_field
+entity_type: node
+bundle: article
+label: 'Test number (integer) field'
+description: 'Aenean egestas eget elit sit amet tincidunt. Praesent eu tristique nisl. Aliquam venenatis sem id sagittis ultrices. Vestibulum a congue libero. Etiam vel dolor neque. Proin molestie tortor in aliquet dictum. Curabitur quis pharetra est, vitae pharetra justo. Cras condimentum ornare feugiat. Donec posuere risus nec ullamcorper suscipit. Morbi nec tristique lectus. Nunc porttitor metus id urna ultricies semper.'
+required: false
+translatable: false
+default_value:
+  -
+    value: 1
+default_value_callback: ''
+settings:
+  min: 0
+  max: null
+  prefix: $
+  suffix: millions
+field_type: integer

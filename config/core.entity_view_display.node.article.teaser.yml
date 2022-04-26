@@ -8,6 +8,15 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
+    - field.field.node.article.field_test_boolean_field
+    - field.field.node.article.field_test_comments_field
+    - field.field.node.article.field_test_content_field
+    - field.field.node.article.field_test_date_field
+    - field.field.node.article.field_test_email_field
+    - field.field.node.article.field_test_link_field
+    - field.field.node.article.field_test_list_float_field
+    - field.field.node.article.field_test_number_integer_field
+    - field.field.node.article.field_test_timestamp_field
     - image.style.medium
     - node.type.article
   module:
@@ -53,3 +62,12 @@ hidden:
   comment: true
   field_image: true
   field_tags: true
+  field_test_boolean_field: true
+  field_test_comments_field: true
+  field_test_content_field: true
+  field_test_date_field: true
+  field_test_email_field: true
+  field_test_link_field: true
+  field_test_list_float_field: true
+  field_test_number_integer_field: true
+  field_test_timestamp_field: true

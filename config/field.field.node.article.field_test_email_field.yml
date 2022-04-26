@@ -1,0 +1,21 @@
+uuid: ebc5cf0d-6311-403f-99b3-7ae838c2a6e0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test_email_field
+    - node.type.article
+id: node.article.field_test_email_field
+field_name: field_test_email_field
+entity_type: node
+bundle: article
+label: 'Test email field'
+description: 'Suspendisse hendrerit nunc quis nibh rutrum, non venenatis metus egestas. Suspendisse turpis urna, malesuada eu condimentum a, porttitor vitae erat. Duis fermentum dictum consectetur. Quisque imperdiet blandit nisi et pretium. Quisque venenatis, ante tristique pharetra volutpat, tortor urna efficitur massa, quis sollicitudin ante odio non nibh. In non faucibus odio. Sed molestie vehicula metus, id dapibus elit. Duis non nibh non urna cursus pellentesque id sed ante. Integer hendrerit augue magna, at eleifend dui malesuada vel. Nam urna erat, convallis nec arcu a, imperdiet hendrerit nulla. Quisque sem lacus, pretium in leo quis, fringilla fringilla eros. Sed non turpis accumsan, commodo neque id, egestas mi. Donec vitae est fermentum, tincidunt felis et, suscipit nibh. Maecenas egestas semper feugiat.'
+required: false
+translatable: false
+default_value:
+  -
+    value: test@mail.com
+default_value_callback: ''
+settings: {  }
+field_type: email

@@ -1,0 +1,12 @@
+uuid: a1245897-57e6-476c-a458-5a34edbe595b
+langcode: en
+status: true
+dependencies: {  }
+id: test_contact_form
+label: 'Test contact form'
+recipients:
+  - webmaster@example.com
+reply: 'Aliquam fermentum massa et odio pretium rutrum. Donec sed turpis congue, posuere nisl sit amet, egestas ipsum. Integer vulputate pulvinar ipsum, ac sollicitudin velit ullamcorper vestibulum. Cras tristique tellus euismod elementum commodo. Nullam et felis sed tellus volutpat lacinia. Maecenas ut metus et purus convallis tincidunt. Quisque sed risus vulputate, aliquet nunc eu, pulvinar tortor. Sed sit amet justo sed orci lacinia eleifend. Donec felis ante, egestas ac sagittis interdum, vestibulum a nisi.'
+weight: 0
+message: 'In hac habitasse platea dictumst. Nunc iaculis nibh a fermentum faucibus. Fusce lacus urna, molestie quis congue vel, posuere feugiat erat. Fusce nec viverra magna, vitae molestie tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum gravida sapien in mollis lobortis. Fusce a tincidunt libero, nec venenatis ante. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum ut magna sagittis, posuere mauris at, ornare leo. Duis et varius risus, id commodo justo. Morbi vel pretium leo, vitae rhoncus arcu. Sed eget augue varius urna tincidunt euismod. Vestibulum vulputate commodo viverra. Mauris sollicitudin mattis orci sed tempus. Nunc turpis ligula, egestas et semper sodales, hendrerit nec ex.'
+redirect: ''

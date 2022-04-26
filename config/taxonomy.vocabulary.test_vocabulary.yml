@@ -1,0 +1,8 @@
+uuid: 5dc51f38-9b04-4514-86a8-2ea841d388b8
+langcode: en
+status: true
+dependencies: {  }
+name: 'Test vocabulary'
+vid: test_vocabulary
+description: 'Donec vestibulum lobortis justo, sit amet aliquam augue bibendum ultrices'
+weight: 0

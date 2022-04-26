@@ -1,0 +1,21 @@
+uuid: 2c412e2e-9d76-45d9-8b6b-3a519acc7e4e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_test_list_float_field
+    - node.type.page
+  module:
+    - options
+id: node.page.field_test_list_float_field
+field_name: field_test_list_float_field
+entity_type: node
+bundle: page
+label: 'Test list (float) field'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: list_float
