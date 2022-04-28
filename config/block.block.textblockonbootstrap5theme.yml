@@ -1,0 +1,30 @@
+uuid: 5ad225ea-4f27-4577-8f9b-9c69c9191518
+langcode: en
+status: true
+dependencies:
+  content:
+    - 'block_content:basic:aaade802-e3c9-4e40-8e91-22c0e497a596'
+  module:
+    - block_content
+    - system
+  theme:
+    - bootstrap5
+id: textblockonbootstrap5theme
+theme: bootstrap5
+region: content
+weight: 0
+provider: null
+plugin: 'block_content:aaade802-e3c9-4e40-8e91-22c0e497a596'
+settings:
+  id: 'block_content:aaade802-e3c9-4e40-8e91-22c0e497a596'
+  label: 'Text block on Bootstrap 5 theme'
+  label_display: visible
+  provider: block_content
+  status: true
+  info: ''
+  view_mode: full
+visibility:
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node
