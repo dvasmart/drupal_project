@@ -1,16 +1,106 @@
-uuid: 70775969-8c2b-4522-abd2-d4a20e7e7f7c
+uuid: fbb6311c-7d6b-4737-887d-fe68f12acc64
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
-    - field.field.node.news.field_category
-    - field.field.node.news.field_test_date_field
+    - field.field.node.news.field_image
+    - field.field.node.news.field_term_reference
+    - field.field.node.news.field_test_list
     - node.type.news
   module:
+    - image
+    - layout_builder
+    - layout_discovery
+    - options
     - text
     - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          7af2f05e-196e-40e7-8984-a35749d0c5b2:
+            uuid: 7af2f05e-196e-40e7-8984-a35749d0c5b2
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 1
+            additional: {  }
+          5a108044-3f65-4ee3-bfb2-905af232718c:
+            uuid: 5a108044-3f65-4ee3-bfb2-905af232718c
+            region: content
+            configuration:
+              id: 'field_block:node:news:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_summary_or_trimmed
+                label: hidden
+                settings:
+                  trim_length: 600
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          325b166a-df4b-4c15-9f06-80433ab2631d:
+            uuid: 325b166a-df4b-4c15-9f06-80433ab2631d
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_term_reference'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: hidden
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+          87641aba-be43-451f-8f4f-a5b75f5299ba:
+            uuid: 87641aba-be43-451f-8f4f-a5b75f5299ba
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_test_list'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 5
+            additional: {  }
+          b1072745-d673-4618-9486-9ebfe46417c4:
+            uuid: b1072745-d673-4618-9486-9ebfe46417c4
+            region: content
+            configuration:
+              id: 'extra_field_block:node:news:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 2
+            additional: {  }
+        third_party_settings: {  }
 id: node.news.teaser
 targetEntityType: node
 bundle: news
@@ -22,13 +112,35 @@ content:
     settings:
       trim_length: 600
     third_party_settings: {  }
-    weight: 101
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 1
+    region: content
+  field_term_reference:
+    type: entity_reference_label
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_test_list:
+    type: list_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
     region: content
   links:
     settings: {  }
     third_party_settings: {  }
-    weight: 100
+    weight: 0
     region: content
-hidden:
-  field_category: true
-  field_test_date_field: true
+hidden: {  }

@@ -2,9 +2,9 @@ _core:
   default_config_hash: VDJxTZtQR21qB4lvOq8zszJZLvLKrSPQpdn2E3T71Ww
 langcode: en
 uuid: 1b918d53-78f1-4572-84b5-c343798345bf
-name: 'Drush Site-Install'
+name: 'Drupal 9'
 mail: admin@example.com
-slogan: ''
+slogan: 'Content management system'
 page:
   403: ''
   404: ''

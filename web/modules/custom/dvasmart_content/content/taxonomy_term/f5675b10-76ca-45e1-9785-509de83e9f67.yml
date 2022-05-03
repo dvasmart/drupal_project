@@ -1,0 +1,33 @@
+_meta:
+  version: '1.0'
+  entity_type: taxonomy_term
+  uuid: f5675b10-76ca-45e1-9785-509de83e9f67
+  bundle: tags
+  default_langcode: en
+default:
+  status:
+    -
+      value: true
+  name:
+    -
+      value: ph
+  description:
+    -
+      value: "<p>Description of ph (depth 1)</p>\r\n"
+      format: basic_html
+  weight:
+    -
+      value: 0
+  parent:
+    -
+      target_id: 0
+  revision_translation_affected:
+    -
+      value: true
+  path:
+    -
+      alias: ''
+      langcode: en
+  field_show_on_homepage:
+    -
+      value: true

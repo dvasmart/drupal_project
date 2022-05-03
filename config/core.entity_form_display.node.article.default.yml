@@ -7,22 +7,11 @@ dependencies:
     - field.field.node.article.comment
     - field.field.node.article.field_image
     - field.field.node.article.field_tags
-    - field.field.node.article.field_test_boolean_field
-    - field.field.node.article.field_test_comments_field
-    - field.field.node.article.field_test_content_field
-    - field.field.node.article.field_test_date_field
-    - field.field.node.article.field_test_email_field
-    - field.field.node.article.field_test_link_field
-    - field.field.node.article.field_test_list_float_field
-    - field.field.node.article.field_test_number_integer_field
-    - field.field.node.article.field_test_timestamp_field
     - image.style.thumbnail
     - node.type.article
   module:
     - comment
-    - datetime
     - image
-    - link
     - path
     - text
 _core:
@@ -71,70 +60,6 @@ content:
       match_limit: 10
       size: 60
       placeholder: ''
-    third_party_settings: {  }
-  field_test_boolean_field:
-    type: boolean_checkbox
-    weight: 121
-    region: content
-    settings:
-      display_label: true
-    third_party_settings: {  }
-  field_test_comments_field:
-    type: comment_default
-    weight: 122
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_test_content_field:
-    type: entity_reference_autocomplete
-    weight: 129
-    region: content
-    settings:
-      match_operator: CONTAINS
-      match_limit: 10
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-  field_test_date_field:
-    type: datetime_default
-    weight: 123
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_test_email_field:
-    type: email_default
-    weight: 124
-    region: content
-    settings:
-      placeholder: ''
-      size: 60
-    third_party_settings: {  }
-  field_test_link_field:
-    type: link_default
-    weight: 125
-    region: content
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-  field_test_list_float_field:
-    type: options_select
-    weight: 127
-    region: content
-    settings: {  }
-    third_party_settings: {  }
-  field_test_number_integer_field:
-    type: number
-    weight: 128
-    region: content
-    settings:
-      placeholder: ''
-    third_party_settings: {  }
-  field_test_timestamp_field:
-    type: datetime_timestamp
-    weight: 126
-    region: content
-    settings: {  }
     third_party_settings: {  }
   path:
     type: path

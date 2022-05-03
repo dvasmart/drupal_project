@@ -1,8 +1,0 @@
-uuid: f4e8c4dc-0cdc-40e2-a64a-395b9823bc55
-langcode: en
-status: true
-dependencies: {  }
-name: Category
-vid: category
-description: 'Sed lacinia sem vitae nulla pretium sodales. Morbi auctor, tellus ac sodales viverra, risus neque ullamcorper purus, in facilisi'
-weight: 0

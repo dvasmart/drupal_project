@@ -1,4 +1,4 @@
-uuid: 0237f799-0a92-49c3-a7b2-4b0eaf4b11f2
+uuid: 6328914a-084f-4739-97e4-37c9c07dccff
 langcode: en
 status: true
 dependencies:
@@ -11,7 +11,7 @@ third_party_settings:
     parent: 'main:'
 name: News
 type: news
-description: 'Quisque consectetur est at turpis facilisis, vitae tincidunt purus cursus. Aenean ut lobortis massa. Phasellus at pretium lectus. Suspendisse lacinia nulla ut euismod iaculis. Nam elementum egestas dolor elementum dapibus. Etiam sed placerat lorem. Suspendisse vel nibh interdum, malesuada sem quis, sollicitudin mauris. Cras ut cursus libero. Aenean hendrerit, magna id dapibus gravida, libero nulla maximus diam, in finibus eros magna vel dui. Integer auctor, elit et viverra tincidunt, purus nibh congue diam, a malesuada diam ex nec nibh. Donec fringilla ligula fermentum magna mollis, sed efficitur quam ultrices. Donec dui purus, luctus a tempor in, ultrices eget quam. Donec eget iaculis ligula. Nunc quis ultrices leo. Sed tincidunt efficitur variu'
+description: ''
 help: ''
 new_revision: true
 preview_mode: 1

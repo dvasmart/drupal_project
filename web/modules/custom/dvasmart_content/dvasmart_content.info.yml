@@ -1,0 +1,16 @@
+name: dvasmart_content
+type: module
+description: Provides additional functionality for the site.
+package: Custom
+core_version_requirement: ^9 || ^10
+
+dependencies:
+  - default_content
+
+default_content:
+    node:
+      - db55a142-21e8-4684-b047-4bb1a0662a50
+    file:
+      - b9b12d35-7d09-426b-bc55-918c36f30037
+    taxonomy_term:
+      - f5675b10-76ca-45e1-9785-509de83e9f67

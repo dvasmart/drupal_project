@@ -1,0 +1,144 @@
+uuid: e52639a3-e0d3-48eb-b641-31736c0c04ae
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.news.body
+    - field.field.node.news.field_image
+    - field.field.node.news.field_term_reference
+    - field.field.node.news.field_test_list
+    - node.type.news
+  module:
+    - image
+    - layout_builder
+    - layout_discovery
+    - options
+    - text
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: true
+    allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          9480f3b6-68c5-43d2-90cd-019fec65771b:
+            uuid: 9480f3b6-68c5-43d2-90cd-019fec65771b
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_image'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: image
+                label: above
+                settings:
+                  image_link: ''
+                  image_style: ''
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+          7996776c-a2a2-4b4c-8510-39046a89977d:
+            uuid: 7996776c-a2a2-4b4c-8510-39046a89977d
+            region: content
+            configuration:
+              id: 'extra_field_block:node:news:links'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+            weight: 1
+            additional: {  }
+          55865b50-78b3-4d7a-a6a0-1240858329e7:
+            uuid: 55865b50-78b3-4d7a-a6a0-1240858329e7
+            region: content
+            configuration:
+              id: 'field_block:node:news:body'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: text_default
+                label: hidden
+                settings: {  }
+                third_party_settings: {  }
+            weight: 2
+            additional: {  }
+          0b3dbcda-e649-4ff2-8884-b31fd670e2ed:
+            uuid: 0b3dbcda-e649-4ff2-8884-b31fd670e2ed
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_term_reference'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_label
+                label: above
+                settings:
+                  link: true
+                third_party_settings: {  }
+            weight: 3
+            additional: {  }
+          382451b8-8d98-40f8-b3f5-01b26dfb66cd:
+            uuid: 382451b8-8d98-40f8-b3f5-01b26dfb66cd
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_test_list'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: list_default
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 4
+            additional: {  }
+        third_party_settings: {  }
+id: node.news.full
+targetEntityType: node
+bundle: news
+mode: full
+content:
+  body:
+    type: text_default
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    weight: 2
+    region: content
+  field_image:
+    type: image
+    label: above
+    settings:
+      image_link: ''
+      image_style: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+  field_term_reference:
+    type: entity_reference_label
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    weight: 3
+    region: content
+  field_test_list:
+    type: list_default
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 4
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 1
+    region: content
+hidden: {  }

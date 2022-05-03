@@ -1,8 +1,0 @@
-uuid: 78dadfe9-b425-492e-bf58-32d2150d8cce
-langcode: en
-status: true
-dependencies: {  }
-id: test_comment_type
-label: 'Test comment type'
-target_entity_type_id: block_content
-description: 'Morbi vehicula, augue vitae vestibulum fringilla, metus libero lobortis dui, a consectetur velit nunc a lorem. Curabitur consequat mollis dui, dignissim ornare magna tincidunt id. Vestibulum congue dictum efficitur. Morbi convallis massa mauris, eu iaculis turpis sollicitudin quis. Mauris ac tortor volutpat, porttitor quam ut, sagittis elit. Aliquam molestie felis diam, non dictum felis ullamcorper a. Phasellus eleifend vitae nisi eget pretium. In massa arcu, efficitur vitae tempus quis, aliquet feugiat massa. Ut porttitor dui quis elit accumsan mattis. Mauris iaculis efficitur imperdiet. Suspendisse mollis consequat justo, sed luctus justo.'

@@ -1,0 +1,27 @@
+_meta:
+  version: '1.0'
+  entity_type: file
+  uuid: b9b12d35-7d09-426b-bc55-918c36f30037
+  default_langcode: en
+default:
+  uid:
+    -
+      target_id: 1
+  filename:
+    -
+      value: generateImage_VBYF9N.jpeg
+  uri:
+    -
+      value: 'public://2022-05/generateImage_VBYF9N.jpeg'
+  filemime:
+    -
+      value: image/jpeg
+  filesize:
+    -
+      value: 3919
+  status:
+    -
+      value: true
+  created:
+    -
+      value: 1651509453
