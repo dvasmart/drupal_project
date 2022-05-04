@@ -1,0 +1,27 @@
+uuid: 589e1e8b-8069-48b2-b5cd-89478c769129
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_private_file
+    - node.type.news
+  module:
+    - file
+id: node.news.field_private_file
+field_name: field_private_file
+entity_type: node
+bundle: news
+label: 'Private file'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:file'
+  handler_settings: {  }
+  file_directory: '[date:custom:Y]-[date:custom:m]'
+  file_extensions: 'txt doc'
+  max_filesize: ''
+  description_field: false
+field_type: file

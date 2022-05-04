@@ -1,0 +1,17 @@
+uuid: 7e695eae-cead-4713-8bbc-3c05c928de71
+langcode: en
+status: true
+dependencies: {  }
+name: 'Format for content editor'
+format: format_for_content_editor
+weight: 0
+filters:
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<a href hreflang> <ul type> <ol start type> <li> <dl> <dt> <dd> <b> <strong> <i> <strike> <q> <img src alt data-entity-type data-entity-uuid>'
+      filter_html_help: true
+      filter_html_nofollow: false

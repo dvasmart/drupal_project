@@ -1,0 +1,24 @@
+uuid: 2234fa5f-dbea-40e6-b625-3b6d22a5a319
+langcode: en
+status: true
+dependencies: {  }
+name: 'Format for anonymous users'
+format: format_for_anonymous_users
+weight: 0
+filters:
+  filter_url:
+    id: filter_url
+    provider: filter
+    status: true
+    weight: 0
+    settings:
+      filter_url_length: 72
+  filter_html:
+    id: filter_html
+    provider: filter
+    status: true
+    weight: -10
+    settings:
+      allowed_html: '<0 href hreflang target> <1> <2> <3 type> <4 start type> <5> <6> <7> <8>'
+      filter_html_help: true
+      filter_html_nofollow: false

@@ -14,6 +14,7 @@ module:
   contact: 0
   context: 0
   contextual: 0
+  ctools: 0
   datetime: 0
   dblog: 0
   devel: 0
@@ -46,18 +47,21 @@ module:
   rdf: 0
   realistic_dummy_content: 0
   realistic_dummy_content_api: 0
+  responsive_image: 0
   search: 0
   serialization: 0
   shortcut: 0
   system: 0
   taxonomy: 0
   text: 0
+  token: 0
   toolbar: 0
   tour: 0
   update: 0
   user: 0
   views_ui: 0
   ds: 1
+  pathauto: 1
   views: 10
   minimal: 1000
 theme:
