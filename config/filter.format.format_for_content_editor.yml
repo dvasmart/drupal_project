@@ -12,6 +12,6 @@ filters:
     status: true
     weight: -10
     settings:
-      allowed_html: '<a href hreflang> <ul type> <ol start type> <li> <dl> <dt> <dd> <b> <strong> <i> <strike> <q> <img src alt data-entity-type data-entity-uuid>'
+      allowed_html: '<0 href hreflang> <1 type> <2 start type> <3> <4> <5> <6> <7> <8> <9> <10> <11 src alt data-entity-type data-entity-uuid> <12> <13 class="title"> <14> <15 class="title"> <16> <strong> <em> <a href> <ul> <li> <ol> <blockquote> <img src alt data-entity-type data-entity-uuid> <span class="text-danger text-warning text-success">'
       filter_html_help: true
       filter_html_nofollow: false

@@ -36,9 +36,13 @@ settings:
           name: Tools
           items:
             - Source
+        -
+          name: styles
+          items:
+            - Styles
   plugins:
     stylescombo:
-      styles: ''
+      styles: "span.text-danger|Danger\r\nspan.text-warning|Warning\r\nspan.text-success|Success"
     language:
       language_list: un
 image_upload:
