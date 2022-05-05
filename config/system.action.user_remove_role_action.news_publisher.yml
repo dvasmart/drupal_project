@@ -1,0 +1,14 @@
+uuid: a359370b-ca46-4443-8b93-cf8b79894a09
+langcode: en
+status: true
+dependencies:
+  config:
+    - user.role.news_publisher
+  module:
+    - user
+id: user_remove_role_action.news_publisher
+label: 'Remove the News publisher role from the selected user(s)'
+type: user
+plugin: user_remove_role_action
+configuration:
+  rid: news_publisher

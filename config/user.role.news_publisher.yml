@@ -1,0 +1,26 @@
+uuid: d52563e9-39e0-4988-9827-efab1c06e0ff
+langcode: en
+status: true
+dependencies:
+  config:
+    - filter.format.format_for_content_editor
+    - node.type.news
+  module:
+    - filter
+    - media
+    - node
+id: news_publisher
+label: 'News publisher'
+weight: 5
+is_admin: null
+permissions:
+  - 'access content overview'
+  - 'create media'
+  - 'create news content'
+  - 'delete media'
+  - 'delete own news content'
+  - 'edit own news content'
+  - 'update media'
+  - 'use text format format_for_content_editor'
+  - 'view own unpublished content'
+  - 'view own unpublished media'
