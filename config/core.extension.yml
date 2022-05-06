@@ -6,6 +6,7 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
+  bootstrap_paragraphs: 0
   breakpoint: 0
   ckeditor: 0
   color: 0
@@ -21,7 +22,9 @@ module:
   devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
+  entity_reference_revisions: 0
   field: 0
+  field_group: 0
   field_ui: 0
   file: 0
   filter: 0
@@ -60,9 +63,11 @@ module:
   update: 0
   user: 0
   views_ui: 0
+  viewsreference: 0
   ds: 1
   pathauto: 1
   views: 10
+  paragraphs: 11
   minimal: 1000
 theme:
   bartik: 0

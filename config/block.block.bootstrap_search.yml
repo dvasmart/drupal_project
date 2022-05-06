@@ -3,7 +3,10 @@ langcode: en
 status: true
 dependencies:
   module:
+    - context
+    - node
     - search
+    - system
   theme:
     - bootstrap
 _core:
@@ -20,4 +23,36 @@ settings:
   label_display: visible
   provider: search
   page_id: ''
-visibility: {  }
+visibility:
+  user_status:
+    id: user_status
+    negate: false
+    context_mapping:
+      user: '@user.current_user_context:current_user'
+    user_status:
+      viewing_profile: '0'
+      logged_viewing_profile: '0'
+      own_page_true: '0'
+      field_value: '0'
+    user_fields: uid
+  context_all:
+    id: context_all
+    negate: null
+    values: ''
+  context:
+    id: context
+    negate: null
+    values: ''
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      news: news
+      page: page
+  request_path:
+    id: request_path
+    negate: false
+    pages: /node

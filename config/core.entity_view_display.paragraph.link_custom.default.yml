@@ -1,0 +1,27 @@
+uuid: 0ca7df2a-220f-4f02-9dd1-c15b7860528e
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.link_custom.bp_link
+    - paragraphs.paragraphs_type.link_custom
+  module:
+    - link
+id: paragraph.link_custom.default
+targetEntityType: paragraph
+bundle: link_custom
+mode: default
+content:
+  bp_link:
+    type: link
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden: {  }

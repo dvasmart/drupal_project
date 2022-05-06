@@ -6,6 +6,7 @@ dependencies:
     - views.view.news_views
   module:
     - context
+    - node
     - system
     - views
   theme:
@@ -46,3 +47,12 @@ visibility:
     id: request_path
     negate: false
     pages: /news
+  'entity_bundle:node':
+    id: 'entity_bundle:node'
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    bundles:
+      article: article
+      news: news
+      page: page

@@ -1,0 +1,31 @@
+uuid: b8684605-52c8-4b1d-ab96-e2c9b9148419
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.paragraph_page.field_paragraph
+    - node.type.paragraph_page
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.paragraph_page.default
+targetEntityType: node
+bundle: paragraph_page
+mode: default
+content:
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 0
+    region: content
+hidden:
+  links: true

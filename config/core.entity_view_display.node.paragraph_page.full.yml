@@ -1,0 +1,36 @@
+uuid: f369c4af-c9cd-44b6-9f94-cd36ddff1c58
+langcode: en
+status: false
+dependencies:
+  config:
+    - core.entity_view_mode.node.full
+    - field.field.node.paragraph_page.field_paragraph
+    - node.type.paragraph_page
+  module:
+    - entity_reference_revisions
+    - layout_builder
+    - user
+third_party_settings:
+  layout_builder:
+    enabled: false
+    allow_custom: false
+id: node.paragraph_page.full
+targetEntityType: node
+bundle: paragraph_page
+mode: full
+content:
+  field_paragraph:
+    type: entity_reference_revisions_entity_view
+    label: inline
+    settings:
+      view_mode: default
+      link: ''
+    third_party_settings: {  }
+    weight: 101
+    region: content
+  links:
+    settings: {  }
+    third_party_settings: {  }
+    weight: 100
+    region: content
+hidden: {  }
