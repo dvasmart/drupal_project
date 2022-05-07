@@ -3,16 +3,13 @@ langcode: en
 status: true
 dependencies:
   config:
-    - core.entity_view_display.comment.comment.default
     - field.field.node.news.body
-    - field.field.node.news.comment
     - field.field.node.news.field_image
     - field.field.node.news.field_private_file
     - field.field.node.news.field_term_reference
     - field.field.node.news.field_test_list
     - node.type.news
   module:
-    - comment
     - file
     - image
     - layout_builder
@@ -132,23 +129,6 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
-          10946904-e060-4be9-b513-ca6e0b9ec79f:
-            uuid: 10946904-e060-4be9-b513-ca6e0b9ec79f
-            region: content
-            configuration:
-              id: 'field_block:node:news:comment'
-              label_display: '0'
-              context_mapping:
-                entity: layout_builder.entity
-              formatter:
-                type: comment_default
-                label: above
-                settings:
-                  view_mode: default
-                  pager_id: 0
-                third_party_settings: {  }
-            weight: 6
-            additional: {  }
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -161,15 +141,6 @@ content:
     settings: {  }
     third_party_settings: {  }
     weight: 1
-    region: content
-  comment:
-    type: comment_default
-    label: above
-    settings:
-      view_mode: default
-      pager_id: 0
-    third_party_settings: {  }
-    weight: 6
     region: content
   field_image:
     type: image

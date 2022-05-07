@@ -8,11 +8,36 @@ dependencies:
   module:
     - entity_reference_revisions
     - layout_builder
+    - layout_discovery
     - user
 third_party_settings:
   layout_builder:
-    enabled: false
+    enabled: true
     allow_custom: false
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components:
+          0fddbfda-1532-4e0e-a051-ed8a71726467:
+            uuid: 0fddbfda-1532-4e0e-a051-ed8a71726467
+            region: content
+            configuration:
+              id: 'field_block:node:paragraph_page:field_paragraph'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: entity_reference_revisions_entity_view
+                label: inline
+                settings:
+                  view_mode: default
+                  link: ''
+                third_party_settings: {  }
+            weight: 0
+            additional: {  }
+        third_party_settings: {  }
 id: node.paragraph_page.default
 targetEntityType: node
 bundle: paragraph_page

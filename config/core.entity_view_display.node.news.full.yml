@@ -5,7 +5,6 @@ dependencies:
   config:
     - core.entity_view_mode.node.full
     - field.field.node.news.body
-    - field.field.node.news.comment
     - field.field.node.news.field_image
     - field.field.node.news.field_private_file
     - field.field.node.news.field_term_reference
@@ -144,5 +143,4 @@ content:
     weight: 1
     region: content
 hidden:
-  comment: true
   field_private_file: true
