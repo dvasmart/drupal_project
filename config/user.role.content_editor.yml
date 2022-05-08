@@ -7,8 +7,10 @@ dependencies:
     - node.type.article
     - node.type.page
     - taxonomy.vocabulary.tags
+    - workflows.workflow.test_workflow
   module:
     - comment
+    - content_moderation
     - contextual
     - file
     - filter
@@ -45,6 +47,9 @@ permissions:
   - 'edit own page content'
   - 'edit terms in tags'
   - 'revert all revisions'
+  - 'use test_workflow transition create_new_draft'
+  - 'use test_workflow transition moderation'
+  - 'use test_workflow transition publish'
   - 'use text format format_for_content_editor'
   - 'view all revisions'
   - 'view own unpublished content'

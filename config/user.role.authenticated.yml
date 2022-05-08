@@ -4,9 +4,11 @@ status: true
 dependencies:
   config:
     - filter.format.basic_html
+    - workflows.workflow.test_workflow
   module:
     - comment
     - contact
+    - content_moderation
     - filter
     - media
     - search
@@ -26,5 +28,6 @@ permissions:
   - 'post comments'
   - 'search content'
   - 'skip comment approval'
+  - 'use test_workflow transition create_new_draft'
   - 'use text format basic_html'
   - 'view media'
