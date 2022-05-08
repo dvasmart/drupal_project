@@ -1,0 +1,18 @@
+settings:
+  allowed_values:
+    -
+      label: Нет
+    -
+      label: '1 секунда'
+    -
+      label: '2 секунды'
+    -
+      label: '3 секунды'
+    -
+      label: '4 секунды'
+    -
+      label: '5 секунд'
+    -
+      label: '6 секунд'
+    -
+      label: '7 секунд'

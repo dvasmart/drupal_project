@@ -28,7 +28,7 @@ test:
 drush_folder:
 	docker-compose exec -T php bash -c 'mkdir -p "drush" && echo -e "options:\n  uri: http://$(PROJECT_BASE_URL)" > drush/drush.yml'
 create_user:
-	docker-compose exec -T -w /var/www/web php bash -c 'drush ucrt "Benjamin Franklin" --mail="b_franklin@mail.com" --password="123"'
+	docker-compose exec -T -w /var/www/web php bash -c 'drush ucrt "Benjamin Franklin" --mail="bfranklin@mail.com" --password="123"'
 content:
 	docker-compose exec -T -w=/var/www/web php bash -c "drush en dvasmart_content -y"
 	docker-compose exec -T -w=/var/www/web php bash -c "drush pmu dvasmart_content default_content hal -y"

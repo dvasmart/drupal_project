@@ -1,9 +1,0 @@
-uuid: 70febdea-1600-4866-96ab-ac5ee996e55d
-langcode: en
-status: true
-dependencies: {  }
-id: test_role
-label: 'test role'
-weight: 4
-is_admin: null
-permissions: {  }

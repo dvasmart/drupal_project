@@ -1,0 +1,12 @@
+uuid: edc873a1-a92a-48fe-a996-ab0b49436cd2
+langcode: en
+status: true
+dependencies:
+  module:
+    - language
+id: moderator
+label: Moderator
+weight: -7
+is_admin: null
+permissions:
+  - 'administer languages'

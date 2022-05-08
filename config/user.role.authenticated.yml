@@ -6,6 +6,7 @@ dependencies:
     - filter.format.basic_html
     - workflows.workflow.test_workflow
   module:
+    - allowed_languages
     - comment
     - contact
     - content_moderation
@@ -18,13 +19,14 @@ _core:
   default_config_hash: I44QAB4es39lNzMQWiJLq2dfjX7VRSOzT_5KzAcUq_M
 id: authenticated
 label: 'Authenticated user'
-weight: 1
+weight: -9
 is_admin: false
 permissions:
   - 'access comments'
   - 'access content'
   - 'access shortcuts'
   - 'access site-wide contact form'
+  - 'administer allowed languages'
   - 'post comments'
   - 'search content'
   - 'skip comment approval'

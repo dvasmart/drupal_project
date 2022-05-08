@@ -11,7 +11,7 @@ dependencies:
     - node
 id: news_publisher
 label: 'News publisher'
-weight: 5
+weight: -8
 is_admin: null
 permissions:
   - 'access content overview'

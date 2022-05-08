@@ -52,3 +52,4 @@ content:
     region: content
 hidden:
   comment: true
+  langcode: true

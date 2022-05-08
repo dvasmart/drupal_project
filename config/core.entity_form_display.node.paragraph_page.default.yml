@@ -5,7 +5,9 @@ dependencies:
   config:
     - field.field.node.paragraph_page.field_paragraph
     - node.type.paragraph_page
+    - workflows.workflow.test_workflow
   module:
+    - content_moderation
     - paragraphs
     - path
 id: node.paragraph_page.default
@@ -36,6 +38,19 @@ content:
       features:
         collapse_edit_all: collapse_edit_all
         duplicate: duplicate
+    third_party_settings: {  }
+  langcode:
+    type: language_select
+    weight: 2
+    region: content
+    settings:
+      include_locked: true
+    third_party_settings: {  }
+  moderation_state:
+    type: moderation_state_default
+    weight: 100
+    region: content
+    settings: {  }
     third_party_settings: {  }
   path:
     type: path

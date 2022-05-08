@@ -1,13 +1,10 @@
 uuid: eb32ada0-9630-4417-aed6-ed5689b71633
 langcode: en
-status: true
+status: false
 dependencies:
-  config:
-    - views.view.test_related_views
   module:
     - context
     - system
-    - views
   theme:
     - olivero
 id: views_block__test_related_views_block_1_3

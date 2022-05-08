@@ -144,3 +144,4 @@ content:
     region: content
 hidden:
   field_private_file: true
+  langcode: true

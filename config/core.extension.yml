@@ -36,9 +36,13 @@ module:
   jquery_ui_datepicker: 0
   jquery_ui_slider: 0
   jquery_ui_touch_punch: 0
+  lang_dropdown: 0
+  language: 0
+  languageicons: 0
   layout_builder: 0
   layout_discovery: 0
   link: 0
+  locale: 0
   media: 0
   media_library: 0
   menu_link_content: 0
@@ -70,8 +74,10 @@ module:
   workflows: 0
   ds: 1
   pathauto: 1
+  content_translation: 10
   views: 10
   paragraphs: 11
+  allowed_languages: 20
   minimal: 1000
 theme:
   bartik: 0

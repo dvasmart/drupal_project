@@ -1,0 +1,18 @@
+uuid: 1a7fcd9c-b746-4dbb-a72e-c4c6d68bcf97
+langcode: en
+status: true
+dependencies:
+  config:
+    - paragraphs.paragraphs_type.bp_modal
+id: paragraph.bp_modal.created
+field_name: created
+entity_type: paragraph
+bundle: bp_modal
+label: 'Authored on'
+description: 'The time that the Paragraph was created.'
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: created

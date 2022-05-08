@@ -1,0 +1,10 @@
+settings:
+  allowed_values:
+    -
+      label: Крохотный
+    -
+      label: Узкий
+    -
+      label: Средний
+    -
+      label: Широкий
