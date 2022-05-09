@@ -6,6 +6,7 @@ dependencies:
     - core.entity_view_mode.node.teaser
     - field.field.node.news.body
     - field.field.node.news.field_image
+    - field.field.node.news.field_metatage
     - field.field.node.news.field_private_file
     - field.field.node.news.field_term_reference
     - field.field.node.news.field_test_list
@@ -145,5 +146,6 @@ content:
     weight: 0
     region: content
 hidden:
+  field_metatage: true
   field_private_file: true
   langcode: true

@@ -5,6 +5,7 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_image
+    - field.field.node.news.field_metatage
     - field.field.node.news.field_private_file
     - field.field.node.news.field_term_reference
     - field.field.node.news.field_test_list
@@ -14,6 +15,7 @@ dependencies:
     - image
     - layout_builder
     - layout_discovery
+    - metatag
     - options
     - text
     - user
@@ -129,6 +131,21 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 5
             additional: {  }
+          003ac216-e06e-4cfe-91f5-fba4155a13aa:
+            uuid: 003ac216-e06e-4cfe-91f5-fba4155a13aa
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_metatage'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: metatag_empty_formatter
+                label: above
+                settings: {  }
+                third_party_settings: {  }
+            weight: 6
+            additional: {  }
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -150,6 +167,13 @@ content:
       image_style: ''
     third_party_settings: {  }
     weight: 4
+    region: content
+  field_metatage:
+    type: metatag_empty_formatter
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    weight: 6
     region: content
   field_private_file:
     type: file_default

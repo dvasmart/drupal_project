@@ -1,0 +1,11 @@
+uuid: 1f029214-e896-4563-82a4-d78d14b490cd
+langcode: en
+status: true
+dependencies:
+  config:
+    - simple_sitemap.type.default_hreflang
+id: test-simple-xml-sitemap
+label: 'Test Simple XML Sitemap'
+description: ''
+type: default_hreflang
+weight: 0

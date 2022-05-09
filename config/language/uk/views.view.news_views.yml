@@ -1,0 +1,35 @@
+label: 'сторінка новин'
+display:
+  default:
+    display_title: 'За замовчуванням'
+    display_options:
+      pager:
+        options:
+          tags:
+            first: '« Перший'
+            last: 'Останній »'
+          expose:
+            items_per_page_label: 'Елементів на сторінці'
+            items_per_page_options_all_label: '- Всі -'
+            offset_label: Зміщення
+      exposed_form:
+        options:
+          submit_button: Застосувати
+          reset_button_label: Скинути
+          exposed_sorts_label: 'Сортувати за'
+          text_input_required: 'Виберіть будь-який фільтр і натисніть «Застосувати», щоб побачити результати'
+          bef:
+            general:
+              secondary_label: 'Розширені опції'
+      filters:
+        field_term_reference_target_id:
+          expose:
+            label: Категорія
+        field_test_list_value:
+          expose:
+            label: Тип
+  page_1:
+    display_title: Сторінка
+    display_options:
+      menu:
+        title: Новини

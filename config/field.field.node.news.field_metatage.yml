@@ -1,0 +1,21 @@
+uuid: eed328ca-616e-45a3-aa98-0567169bfdb0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_metatage
+    - node.type.news
+  module:
+    - metatag
+id: node.news.field_metatage
+field_name: field_metatage
+entity_type: node
+bundle: news
+label: Metatage
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: metatag

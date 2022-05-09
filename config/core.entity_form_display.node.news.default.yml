@@ -5,16 +5,17 @@ dependencies:
   config:
     - field.field.node.news.body
     - field.field.node.news.field_image
+    - field.field.node.news.field_metatage
     - field.field.node.news.field_private_file
     - field.field.node.news.field_term_reference
     - field.field.node.news.field_test_list
     - image.style.thumbnail
     - node.type.news
-    - workflows.workflow.test_workflow
   module:
     - content_moderation
     - file
     - image
+    - metatag
     - path
     - text
 id: node.news.default
@@ -45,6 +46,14 @@ content:
     settings:
       progress_indicator: throbber
       preview_image_style: thumbnail
+    third_party_settings: {  }
+  field_metatage:
+    type: metatag_firehose
+    weight: 126
+    region: content
+    settings:
+      sidebar: true
+      use_details: true
     third_party_settings: {  }
   field_private_file:
     type: file_generic
@@ -116,6 +125,11 @@ content:
     settings:
       size: 60
       placeholder: ''
+    third_party_settings: {  }
+  translation:
+    weight: 10
+    region: content
+    settings: {  }
     third_party_settings: {  }
   uid:
     type: entity_reference_autocomplete
