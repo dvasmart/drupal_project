@@ -1,3 +1,7 @@
 view latest news page:
-  title: 'Access Example page'
-  description: 'Gives user to /example page.'
+  title: 'Access latest news'
+  description: ''
+
+view news by id:
+  title: 'Access news by id'
+  description: ''
