@@ -32,7 +32,7 @@ class NewsController extends ControllerBase
    * Returns page with news by id
    * @return array
    */
-  public function newsById($id) 
+  public function newsByCategory($id) 
   {
     $news = [];
 

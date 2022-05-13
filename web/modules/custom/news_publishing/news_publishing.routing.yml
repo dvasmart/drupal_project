@@ -6,10 +6,10 @@ news_publishing.news_latest:
   requirements: 
     _permission: 'view latest news page'
 
-news_publishing.news_id:
+news_publishing.news_category:
   path: '/news/category/{id}'
   defaults:
-    _controller: '\Drupal\news_publishing\Controller\NewsController::newsById'
-    _title: 'Show news by id'
+    _controller: '\Drupal\news_publishing\Controller\NewsController::newsByCategory'
+    _title: 'Show news by category'
   requirements: 
-    _permission: 'view news by id'
+    _permission: 'view news by category'

@@ -2,6 +2,6 @@ view latest news page:
   title: 'Access latest news'
   description: ''
 
-view news by id:
-  title: 'Access news by id'
+view news by category:
+  title: 'Access news by category'
   description: ''
