@@ -1,0 +1,9 @@
+name: News Publishing
+package: Custom
+
+description: Shows news list
+version: 1.0.0
+
+type: module
+core_version_requirement: ^9 || ^10
+

@@ -1,0 +1,7 @@
+news_publishing.news_latest:
+  path: '/news/latest'
+  defaults:
+    _controller: '\Drupal\news_publishing\Controller\NewsController::newsLatest'
+    _title: 'Show latest news'
+  requirements: 
+    _permission: 'view latest news page'
