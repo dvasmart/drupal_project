@@ -32,6 +32,7 @@ create_user:
 content:
 	docker-compose exec -T -w=/var/www/web php bash -c "drush en dvasmart_content -y"
 	docker-compose exec -T -w=/var/www/web php bash -c "drush pmu dvasmart_content default_content hal -y"
-commit:
-	git add . && git commit -m "$(comm)" && git push
+com:
+	docker-compose exec -T -w=/var/www/web php bash -c "drush cex -y"
+	git add . && git commit -m "$(msg)" && git push
 
