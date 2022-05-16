@@ -13,3 +13,11 @@ news_publishing.news_category:
     _title: 'Show news by category'
   requirements: 
     _permission: 'view news by category'
+
+news_publishing.add_news:
+  path: '/add-news'
+  defaults:
+    _form: '\Drupal\news_publishing\Form\NewsAddForm'
+    _title: 'Adding news'
+  requirements:
+    _permission: 'adding news'

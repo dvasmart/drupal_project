@@ -5,3 +5,7 @@ view latest news page:
 view news by category:
   title: 'Access news by category'
   description: ''
+
+adding news:
+  title: 'Adding news'
+  description: ''

@@ -19,7 +19,12 @@ class NewsController extends ControllerBase
     $entity_type = 'node';
     
     $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
-    $lastId = $storage->getQuery()->condition('status', 1)->condition('type', 'news')->sort('nid', 'DESC')->pager(1)->execute();    
+    $lastId = $storage->getQuery()
+                      ->condition('status', 1)
+                      ->condition('type', 'news')
+                      ->sort('nid', 'DESC')
+                      ->pager(1)
+                      ->execute();    
     $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
     $node = $storage->load(reset($lastId));
     $viewBuilder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
@@ -39,7 +44,11 @@ class NewsController extends ControllerBase
     $entity_type = 'node';
 
     $nodeStorage = \Drupal::entityTypeManager()->getStorage($entity_type);
-    $id = $nodeStorage->getQuery()->condition('status', '1')->condition('type', 'news')->condition('field_term_reference', $id)->execute();
+    $id = $nodeStorage->getQuery()
+                      ->condition('status', '1')
+                      ->condition('type', 'news')
+                      ->condition('field_term_reference', $id)
+                      ->execute();
     $viewBuilder = \Drupal::entityTypeManager()->getViewBuilder($entity_type);
 
     $itemsStorage = \Drupal::entityTypeManager()->getStorage($entity_type);  
