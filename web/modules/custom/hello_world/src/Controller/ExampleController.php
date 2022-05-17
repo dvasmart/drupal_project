@@ -7,8 +7,7 @@ use Drupal\Core\Controller\ControllerBase;
 /**
  * Provides route responses for the Example module.
  */
-class ExampleController extends ControllerBase 
-{
+class ExampleController extends ControllerBase {
 
   /**
    * Returns a simple page.
@@ -16,8 +15,7 @@ class ExampleController extends ControllerBase
    * @return array
    *   A simple renderable array.
    */
-  public function myPage() 
-  {
+  public function myPage() {
     return [
       '#markup' => 'Hello, world',
     ];

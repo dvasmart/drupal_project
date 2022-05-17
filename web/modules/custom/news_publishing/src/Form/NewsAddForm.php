@@ -5,14 +5,12 @@ namespace Drupal\news_publishing\Form;
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\node\Entity\Node;
-use Symfony\Component\DependencyInjection\ContainerInterface;
-use Drupal\Core\Messenger\MessengerInterface;
 
 /**
- * Class NewsAddForm for adding news by using form
+ * Class NewsAddForm for adding news by using form.
  */
-class NewsAddForm extends FormBase 
-{
+class NewsAddForm extends FormBase {
+
   /**
    * Returns a unique string identifying the form.
    *
@@ -23,11 +21,9 @@ class NewsAddForm extends FormBase
    * @return string
    *   The unique string identifying the form.
    */
-  public function getFormId() 
-  {
+  public function getFormId() {
     return 'news_adding_form';
   }
-
 
   /**
    * Form constructor.
@@ -40,8 +36,7 @@ class NewsAddForm extends FormBase
    * @return array
    *   The form structure.
    */
-  public function buildForm(array $form, FormStateInterface $form_state) 
-  {
+  public function buildForm(array $form, FormStateInterface $form_state) {
     $storageCategory = \Drupal::entityTypeManager()->getStorage('taxonomy_term');
     $id = $storageCategory->getQuery()->condition('vid', 'tags')->execute();
 
@@ -55,7 +50,7 @@ class NewsAddForm extends FormBase
       '#title' => $this->t('Title'),
       '#description' => $this->t('Enter the title of news. Note that the title 
 must be at least 10 characters in length'),
-      '#required' => true,
+      '#required' => TRUE,
     ];
 
     $form['body'] = [
@@ -63,7 +58,7 @@ must be at least 10 characters in length'),
       '#title' => $this->t('Main text'),
       '#description' => $this->t('Enter the main body of news. Note that the 
 title must be at least 10 characters in length'),
-      '#required' => true,
+      '#required' => TRUE,
       '#format' => 'basic_html',
       '#default_value' => '<p>This is default news string</p>',
     ];
@@ -71,7 +66,7 @@ title must be at least 10 characters in length'),
     $form['field_term_reference'] = [
       '#type' => 'select',
       '#title' => $this->t('Category'),
-      '#options' => $category
+      '#options' => $category,
     ];
 
     // Group submit handlers in an actions element with a key of "actions" so
@@ -85,21 +80,18 @@ title must be at least 10 characters in length'),
     $form['actions']['submit'] = [
       '#type' => 'submit',
       '#value' => $this->t('Add News'),
-    ];   
+    ];
 
     return $form;
   }
 
-
   /**
-   * Validate the title and the checkbox of the form
-   * 
+   * Validate the title and the checkbox of the form.
+   *
    * @param array $form
    * @param \Drupal\Core\Form\FormStateInterface $form_state
-   * 
    */
-  public function validateForm(array &$form, FormStateInterface $form_state) 
-  {
+  public function validateForm(array &$form, FormStateInterface $form_state) {
     parent::validateForm($form, $form_state);
 
     $title = $form_state->getValue('title');
@@ -113,7 +105,6 @@ title must be at least 10 characters in length'),
 
   }
 
-
   /**
    * Form submission handler.
    *
@@ -122,14 +113,13 @@ title must be at least 10 characters in length'),
    * @param \Drupal\Core\Form\FormStateInterface $form_state
    *   The current state of the form.
    */
-  public function submitForm(array &$form, FormStateInterface $form_state) 
-  {
+  public function submitForm(array &$form, FormStateInterface $form_state) {
     $body = $form_state->getValue('body')['value'];
     $body = check_markup($body, 'basic_html');
     $news = Node::create([
       'type' => 'news',
       'title' => $form_state->getValue('title'),
-      'body' => ['value' => $body,],
+      'body' => ['value' => $body],
       'field_category' => $form_state->getValue('category'),
       'uid' => \Drupal::currentUser()->id(),
     ]);
@@ -137,14 +127,14 @@ title must be at least 10 characters in length'),
     $news->save();
 
     // Call the Static Service Container wrapper
-    // We should inject the messenger service, but its beyond the scope of this 
+    // We should inject the messenger service, but its beyond the scope of this
     // example.
     $message = \Drupal::messenger();
     $message->addMessage('News with id ' . $news->id() . ' was created and now 
 waiting for publishing');
 
-    // Redirect to home
+    // Redirect to home.
     $form_state->setRedirect('<front>');
-  } 
+  }
 
 }
