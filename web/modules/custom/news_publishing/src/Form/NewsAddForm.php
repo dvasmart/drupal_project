@@ -60,7 +60,7 @@ must be at least 10 characters in length'),
 title must be at least 10 characters in length'),
       '#required' => TRUE,
       '#format' => 'basic_html',
-      '#default_value' => '<p>This is default news string</p>',
+      '#default_value' => '<p>' . $this->t('This is default news string') . '</p>',
     ];
 
     $form['field_term_reference'] = [

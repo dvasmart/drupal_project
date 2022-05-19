@@ -9,3 +9,11 @@ view news by category:
 adding news:
   title: 'Adding news'
   description: ''
+
+order display news:
+  title: 'Order display news'
+  description: 'Configuration form in what order to display news on the page'
+
+view news by order:
+  title: 'view news by order'
+  description: ''

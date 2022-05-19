@@ -21,3 +21,21 @@ news_publishing.add_news:
     _title: 'Adding news'
   requirements:
     _permission: 'adding news'
+
+news_publishing.order_display_news:
+  path: '/admin/config/news_publishing/news-order-form'
+  defaults:
+    _form: '\Drupal\news_publishing\Form\NewsOrderForm'
+    _title: 'Configuration form in what order to display news on the page'
+  requirements:
+    _permission: 'order display news'
+  options:  
+    _admin_route: TRUE
+
+news_publishing.news_order:
+  path: '/news/by_order'
+  defaults:
+    _controller: '\Drupal\news_publishing\Controller\NewsController::newsByOrder'
+    _title: 'Show news by order'
+  requirements: 
+    _permission: 'view news by order'

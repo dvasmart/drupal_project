@@ -36,4 +36,8 @@ com:
 	docker-compose exec -T -w=/var/www/web php bash -c "drush cex -y"
 	docker-compose exec -T -w=/var/www/web php bash -c "drush sql:dump --result-file=../db_dump/dump.sql"
 	git add . && git commit -m "$(msg)" && git push
+chk:
+	docker-compose exec -T -w=/var/www/web php bash -c "phpcs --standard=Drupal ../web/modules/custom/"
+rep:
+	docker-compose exec -T -w=/var/www/web php bash -c "phpcbf --standard=Drupal ../web/modules/custom/"
 

@@ -12,7 +12,7 @@ class NewsController extends ControllerBase {
   /**
    * Returns page with latest news.
    *
-   * @return array
+   * @return mixed
    */
   public function newsLatest() {
     $entity_type = 'node';
@@ -36,7 +36,7 @@ class NewsController extends ControllerBase {
   /**
    * Returns page with news by id.
    *
-   * @return array
+   *  @return mixed
    */
   public function newsByCategory($id) {
     $news = [];
@@ -58,6 +58,38 @@ class NewsController extends ControllerBase {
     $list = $viewBuilder->viewMultiple($news, 'teaser');
 
     return $list;
+  }
+
+  /**
+   * Returns page with news by order.
+   *
+   *  @return mixed
+   */
+  public function newsByOrder() {
+    $entity_type = 'node';
+    $order = $this->config('news_publishing.settings')->get('sort');
+
+    $items = \Drupal::entityTypeManager()
+      ->getStorage('node')
+      ->getQuery()
+      ->condition('status', '1')
+      ->condition('type', 'news')
+      ->condition('langcode', 'en')
+      ->sort('nid', $order)
+      ->range(0, 10)
+      ->execute();    
+
+    $storage = \Drupal::entityTypeManager()->getStorage($entity_type);
+    $news = [];
+    foreach ($storage->loadMultiple($items) as $item) {
+      $news[] = $item;
+    }
+
+    $result = \Drupal::entityTypeManager()
+      ->getViewBuilder($entity_type)
+      ->viewMultiple($news, 'teaser');
+
+    return $result;
   }
 
 }
