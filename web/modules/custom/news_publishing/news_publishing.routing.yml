@@ -39,3 +39,11 @@ news_publishing.news_order:
     _title: 'Show news by order'
   requirements: 
     _permission: 'view news by order'
+
+news_publishing.test_template:
+  path: '/test_template'
+  defaults:
+    _controller: '\Drupal\news_publishing\Controller\NewsController::content'
+    _title: ''
+  requirements: 
+    _permission: 'access content'
