@@ -7,10 +7,12 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_metatage
     - field.field.node.news.field_private_file
+    - field.field.node.news.field_publication_date
     - field.field.node.news.field_term_reference
     - field.field.node.news.field_test_list
     - node.type.news
   module:
+    - datetime
     - file
     - image
     - layout_builder
@@ -146,6 +148,23 @@ third_party_settings:
                 third_party_settings: {  }
             weight: 6
             additional: {  }
+          e251e8ac-6393-48bf-b756-b5e616904246:
+            uuid: e251e8ac-6393-48bf-b756-b5e616904246
+            region: content
+            configuration:
+              id: 'field_block:node:news:field_publication_date'
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              formatter:
+                type: datetime_default
+                label: above
+                settings:
+                  timezone_override: ''
+                  format_type: medium
+                third_party_settings: {  }
+            weight: 7
+            additional: {  }
         third_party_settings: {  }
 id: node.news.default
 targetEntityType: node
@@ -182,6 +201,15 @@ content:
       use_description_as_link_text: true
     third_party_settings: {  }
     weight: 5
+    region: content
+  field_publication_date:
+    type: datetime_default
+    label: above
+    settings:
+      timezone_override: ''
+      format_type: medium
+    third_party_settings: {  }
+    weight: 7
     region: content
   field_term_reference:
     type: entity_reference_label

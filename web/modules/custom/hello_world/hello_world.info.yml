@@ -1,7 +1,7 @@
 name: Hello World
 package: Custom
 
-description: Creates a page showing "Hello World"
+description: Creates a page showing "Hello World".
 version: 1.0.0
 
 type: module

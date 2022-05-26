@@ -9,16 +9,16 @@ use Drupal\Core\Controller\ControllerBase;
  */
 class ExampleController extends ControllerBase {
 
-  /**
-   * Returns a simple page.
-   *
-   * @return array
-   *   A simple renderable array.
-   */
-  public function myPage() {
-    return [
-      '#markup' => 'Hello, world',
-    ];
-  }
+/**
+ * Returns a simple page.
+ *
+ * @return array
+ *   A simple renderable array.
+ */
+public function myPage() {
+  return [
+    '#markup' => 'Hello, world',
+  ];
+}
 
 }

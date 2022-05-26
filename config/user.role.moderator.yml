@@ -2,11 +2,45 @@ uuid: edc873a1-a92a-48fe-a996-ab0b49436cd2
 langcode: en
 status: true
 dependencies:
+  config:
+    - node.type.news
+    - taxonomy.vocabulary.tags
+    - workflows.workflow.test_workflow
   module:
+    - content_moderation
+    - content_translation
+    - field_ui
     - language
+    - news_publishing
+    - node
 id: moderator
 label: Moderator
 weight: -7
 is_admin: null
 permissions:
+  - 'access content overview'
+  - 'adding news'
+  - 'administer content translation'
   - 'administer languages'
+  - 'administer node display'
+  - 'create content translations'
+  - 'create news content'
+  - 'delete content translations'
+  - 'delete own news content'
+  - 'edit any news content'
+  - 'field publication date'
+  - 'order display news'
+  - 'translate any entity'
+  - 'translate editable entities'
+  - 'translate news node'
+  - 'translate tags taxonomy_term'
+  - 'update content translations'
+  - 'use test_workflow transition archived'
+  - 'use test_workflow transition moderation'
+  - 'use test_workflow transition publish'
+  - 'view any unpublished content'
+  - 'view future news publications'
+  - 'view latest news page'
+  - 'view latest version'
+  - 'view news by category'
+  - 'view news by order'

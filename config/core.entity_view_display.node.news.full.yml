@@ -8,6 +8,7 @@ dependencies:
     - field.field.node.news.field_image
     - field.field.node.news.field_metatage
     - field.field.node.news.field_private_file
+    - field.field.node.news.field_publication_date
     - field.field.node.news.field_term_reference
     - field.field.node.news.field_test_list
     - node.type.news
@@ -146,4 +147,5 @@ content:
 hidden:
   field_metatage: true
   field_private_file: true
+  field_publication_date: true
   langcode: true

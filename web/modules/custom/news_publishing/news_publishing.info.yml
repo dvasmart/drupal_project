@@ -1,7 +1,7 @@
 name: News Publishing
 package: Custom
 
-description: Shows news list
+description: Shows news list.
 version: 1.0.0
 
 type: module

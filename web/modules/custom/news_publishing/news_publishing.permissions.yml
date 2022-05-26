@@ -15,5 +15,12 @@ order display news:
   description: 'Configuration form in what order to display news on the page'
 
 view news by order:
-  title: 'view news by order'
-  description: ''
+  title: 'View news by order'
+  description: 'Gives access to see news in order on page'
+
+field publication date:
+  title: 'Publication date field access'
+  description: 'Access to change field field_publication_date'
+
+view future news publications:
+  title: 'View future news publications'

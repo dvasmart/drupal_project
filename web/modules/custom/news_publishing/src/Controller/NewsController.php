@@ -92,19 +92,11 @@ class NewsController extends ControllerBase {
     return $result;
   }
 
-  public function content() {
- 
+  public function content() { 
     return [
       '#theme' => 'my_template',
       '#test_var' => $this->t('Test Value'),
-    ];
-
-    // $renderable = [
-    //   '#theme' => 'my_template',
-    //   '#test_var' => 'test variable',
-    // ];
-    // $rendered = \Drupal::service('renderer')->renderPlain($renderable);
- 
+    ]; 
   }
 
 }

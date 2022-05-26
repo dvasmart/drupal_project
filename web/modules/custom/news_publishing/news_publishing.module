@@ -1,5 +1,19 @@
 <?php
 
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\Field\FieldDefinitionInterface;
+use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Field\FieldItemListInterface;
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Entity\EntityInterface;
+
+use Drupal\Core\Datetime\DrupalDateTime;
+use Drupal\datetime\Plugin\Field\FieldType\DateTimeItemInterface;
+use Drupal\Core\Datetime\DateFormatter;
+
+/**
+ * Implements hook_theme().
+ */
 function news_publishing_theme($existing, $type, $theme, $path) {
   return [
     'my_template' => [
@@ -7,3 +21,78 @@ function news_publishing_theme($existing, $type, $theme, $path) {
     ],
   ];
 }
+
+
+/**
+ * Implements hook_form_alter().
+ */
+function news_publishing_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  if ($form_id == 'user_login_form') {
+    $form['#submit'][] = 'news_publishing_login_submit';
+  }
+}
+
+
+/**
+ * Checks if user has role moderator and redirects him to page /admin/content
+ */
+function news_publishing_login_submit(&$form, FormStateInterface $form_state) {
+  $roles = \Drupal::currentUser()->getRoles();
+  $url = '<front>';
+
+  if (in_array('moderator', $roles)) {
+    
+    \Drupal::messenger()->addMessage('Hi! You was redirected to page /admin/content because you have role moderator');
+    $url = 'system.admin_content';
+  }
+
+  $form_state->setRedirect($url);
+}
+
+
+/**
+ * Implements hook_entity_field_access().
+ */
+function news_publishing_entity_field_access($operation, FieldDefinitionInterface $field_definition, AccountInterface $account, FieldItemListInterface $items = NULL) {
+  if ($operation == 'edit' && $field_definition->getName() == 'field_publication_date' && !$account->hasPermission('field publication date')) {
+        
+    return AccessResult::forbidden();
+  }
+
+  return AccessResult::neutral();  
+}
+
+/**
+ * Implements hook_entity_presave().
+ */
+function news_publishing_entity_presave(EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->getType() == 'news' && $entity->field_publication_date->value == '') {
+    
+    if (!$entity->isNew() && $entity->original->get('status')->getValue() != $entity->get('status')->getValue()) {
+
+      $entity->field_publication_date->value = date('d-m-Y');
+    }
+
+  }
+}
+
+
+ /**
+  * Implements hook_entity_access().
+  */
+function news_publishing_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
+  if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'news' && $operation == "view all revisions") {
+
+      $fieldPublicationDate = $entity->get('field_publication_date')->date->getTimestamp();
+      $now = new DrupalDateTime('now');        
+      $currentDate = $now->setTimezone(new \DateTimeZone(DateTimeItemInterface::STORAGE_TIMEZONE))->getTimestamp();
+
+      if($fieldPublicationDate > $currentDate && !$account->hasPermission('field publication date')) {          
+        
+        return AccessResult::forbidden();
+      }
+    
+    return AccessResult::neutral();
+  }
+}
+

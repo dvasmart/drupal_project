@@ -1,0 +1,79 @@
+<?php
+
+use Drupal\Component\Utility\NestedArray;
+use Drupal\Core\Form\FormStateInterface;
+use Drupal\Core\StringTranslation\TranslatableMarkup;
+
+/**
+ * Implements hook_form_FORM_ID_alter().
+ */
+function hello_world_form_user_login_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+    $test = $form_state->getBuildInfo();
+
+    // print_r($form);
+    
+    $form['welcome'] = [
+        '#markup' => 'Welcome to my test Drupal 9 project',
+        '#weight' => -100
+    ];
+
+    $form['name']['#attributes']['placeholder'] = 'Paste here some text';
+}
+
+/**
+ * Implements hook_user_login().
+ */
+function hello_world_user_login($account) {
+  $message = new TranslatableMarkup('Nice to see you, @username', [
+    '@username' => $account->getDisplayName(),
+  ]);
+
+  \Drupal::messenger()->addMessage($message);  
+}
+
+/**
+ * Implements hook_user_format_name_alter().
+ */
+function hello_world_user_format_name_alter(&$name, $account) {
+  $name .= ' (' . $account->id() . ') ';
+}
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function hello_world_preprocess_page(&$variables) {
+  $messages = [
+    'Default message',
+  ];
+
+// hook_hello_world_page_message()
+  $result = \Drupal::moduleHandler()->invokeAll('hello_world_page_message');
+  $messages = NestedArray::mergeDeep($messages, $result);
+
+// hook_hello_world_page_messages_alter()
+  \Drupal::moduleHandler()->alter('hello_world_page_messages', $messages);
+
+  if(!empty($messages)) {
+    foreach ($messages as $item) {
+      \Drupal::messenger()->addMessage($item);
+    }
+  }
+}
+
+/**
+ * Implements hook_hello_world_page_message().
+ */
+function hello_world_hello_world_page_message () {
+  return [
+    'Hello world',
+    'Welcome',
+  ];
+}
+
+/**
+ * Implements hook_hello_world_page_messages_alter().
+ */
+function hello_world_hello_world_page_messages_alter (&$messages) {
+  $messages[0] = 'Hi';
+  $messages[] = 'How are you?';
+}

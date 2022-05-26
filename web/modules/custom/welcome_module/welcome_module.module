@@ -1,0 +1,22 @@
+<?php
+
+/**
+ * @file
+ * File for custom hooks and functions
+ */
+
+
+/**
+ * Implements hello_world_page_message().
+ */
+function welcome_module_hello_world_page_message() {
+    return 'Message from another welcome module';
+}
+
+
+/**
+ * Implements hello_world_page_messages_alter().
+ */
+function welcome_module_hello_world_page_messages_alter(&$messages) {
+    unset($messages[0]);
+}
