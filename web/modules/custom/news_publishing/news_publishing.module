@@ -83,7 +83,11 @@ function news_publishing_entity_presave(EntityInterface $entity) {
 function news_publishing_entity_access(EntityInterface $entity, $operation, AccountInterface $account) {
   if ($entity->getEntityTypeId() == 'node' && $entity->bundle() == 'news' && $operation == "view all revisions") {
 
-      $fieldPublicationDate = $entity->get('field_publication_date')->date->getTimestamp();
+    $fieldPublicationDate = $entity->get('field_publication_date')->date;
+
+    if (!empty($fieldPublicationDate)) {
+
+      $fieldPublicationDate = $fieldPublicationDate->getTimestamp();
       $now = new DrupalDateTime('now');        
       $currentDate = $now->setTimezone(new \DateTimeZone(DateTimeItemInterface::STORAGE_TIMEZONE))->getTimestamp();
 
@@ -91,8 +95,11 @@ function news_publishing_entity_access(EntityInterface $entity, $operation, Acco
         
         return AccessResult::forbidden();
       }
-    
+    }
+
     return AccessResult::neutral();
   }
 }
+
+
 
