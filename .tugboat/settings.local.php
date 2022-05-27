@@ -1,9 +1,9 @@
 <?php
 
 $databases['default']['default'] = array (
-    'database' => 'test',
-    'username' => 'user',
-    'password' => 'pass',
+    'database' => 'tugboat',
+    'username' => 'tugboat',
+    'password' => 'tugboat',
     'prefix' => '',
     'host' => 'mysql',
     'port' => '3306',
