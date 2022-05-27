@@ -16,7 +16,7 @@ services:
         - docker-php-ext-install pdo_mysql gd opcache
         - apt-get clean
         - a2enmod headers rewrite
-        - echo "memory_limit = 512M" >> /usr/local/etc/php/conf.d/my-php.ini
+        - echo "memory_limit = 256M" >> /usr/local/etc/php/conf.d/my-php.ini
 
         - ln -snf "${TUGBOAT_ROOT}/web" "${DOCROOT}"
 
@@ -40,5 +40,5 @@ services:
         - composer install --optimize-autoloader --no-interaction
         # - vendor/bin/drush deploy -y
         # - vendor/bin/drush cim -y
-        - vendor/bin/drush sql:query --file=../db.sql
+        - vendor/bin/drush sql:query --file=../db_dump/dump.sql
         - chmod -R 777 web/sites/default/files/
