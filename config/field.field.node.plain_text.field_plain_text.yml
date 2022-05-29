@@ -1,0 +1,19 @@
+uuid: 97f2651b-d2b1-4e0f-9ae5-6f6a79b429f0
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.node.field_plain_text
+    - node.type.plain_text
+id: node.plain_text.field_plain_text
+field_name: field_plain_text
+entity_type: node
+bundle: plain_text
+label: 'Plain text'
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: string_long

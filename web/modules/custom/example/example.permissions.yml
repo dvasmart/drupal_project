@@ -1,0 +1,3 @@
+view custom block:
+  title: 'View custom block'
+  description: 'Access to view my custom block from example module'

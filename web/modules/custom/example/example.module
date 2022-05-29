@@ -1,0 +1,24 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\node\NodeInterface;
+
+
+/**
+ * Implements hook_entity_presave().
+ */
+function example_entity_presave(EntityInterface $entity) {
+  if (!$entity instanceof NodeInterface
+    || $entity->bundle() !== 'plain_text'
+    || !$entity->hasField('field_plain_text')
+    || $entity->get('field_plain_text')->isEmpty()
+  ) {
+    return;
+  }
+  $value = $entity->get('field_plain_text')->value;
+  /** @var \Drupal\example\Services\TextCleanupService $textCleanup */
+  $textCleanup = \Drupal::service('example_text_cleanup');
+  $entity->set('field_plain_text', $textCleanup->cleanUp($value));
+}
+
+

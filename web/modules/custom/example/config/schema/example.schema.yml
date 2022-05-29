@@ -1,0 +1,36 @@
+# Schema for the configuration files of the Example Module module.
+example.settings:
+  type: config_object
+  label: 'Example Module settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
+
+example.text_cleanup.settings:
+  type: config_object
+  label: 'Example settings'
+  mapping:
+    example:
+      type: string
+      label: 'Example'
+
+example.example.*:
+  type: config_entity
+  label: 'Example'
+  mapping:
+    id:
+      type: string
+      label: ID
+    label:
+      type: label
+      label: Label
+    type:
+      type: string
+      label: Type
+    plugins:
+      type: sequence
+      label: 'Plugins'
+      sequence:
+        type: string
+        label: 'Plugin'

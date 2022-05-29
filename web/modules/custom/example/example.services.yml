@@ -1,0 +1,8 @@
+services:
+  example_text_cleanup:
+    class: Drupal\example\Services\TextCleanupService
+    arguments: ['@plugin.manager.text_cleanup', '@config.factory']
+
+  plugin.manager.text_cleanup:
+    class: Drupal\example\TextCleanupPluginManager
+    parent: default_plugin_manager
