@@ -1,0 +1,4 @@
+administer simple entity types:
+  title: 'Administer simple entity types'
+  description: 'Maintain the types of simple entity entity.'
+  restrict access: true

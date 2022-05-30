@@ -1,0 +1,11 @@
+simple_entity.type_add:
+  title: 'Add simple entity type'
+  route_name: entity.simple_entity_type.add_form
+  appears_on:
+    - entity.simple_entity_type.collection
+
+simple_entity.add_page:
+  title: 'Add simple entity'
+  route_name: entity.simple_entity.add_page
+  appears_on:
+    - entity.simple_entity.collection

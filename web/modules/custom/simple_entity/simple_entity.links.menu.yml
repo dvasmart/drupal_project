@@ -1,0 +1,5 @@
+entity.simple_entity_type.collection:
+  title: 'Simple Entity types'
+  description: 'Manage and CRUD actions on Simple Entity type.'
+  parent: system.admin_structure
+  route_name: entity.simple_entity_type.collection
