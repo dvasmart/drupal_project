@@ -1,0 +1,7 @@
+entity.product_entity_module.settings:
+  path: 'admin/structure/product-entity-module'
+  defaults:
+    _form: '\Drupal\product_entity\Form\ProductEntityModuleSettingsForm'
+    _title: 'Product Entity Module'
+  requirements:
+    _permission: 'administer product entity module'

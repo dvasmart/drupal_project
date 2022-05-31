@@ -1,0 +1,6 @@
+uuid: e265d545-a0a5-4c00-a7c8-f97c8dbd2263
+langcode: en
+status: true
+dependencies: {  }
+id: test_entity_type
+label: 'test entity type'

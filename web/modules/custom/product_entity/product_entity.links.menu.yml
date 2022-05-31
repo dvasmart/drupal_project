@@ -1,0 +1,10 @@
+entity.product_entity_module.settings:
+  title: 'Product Entity Module'
+  description: 'Configure a Product Entity Module entity type.'
+  route_name:  entity.product_entity_module.settings
+  parent: system.admin_structure
+entity.product_entity_module.collection:
+  title: 'Product Entity Modules'
+  description: 'List of product entity modules.'
+  route_name: entity.product_entity_module.collection
+  parent: system.admin_content

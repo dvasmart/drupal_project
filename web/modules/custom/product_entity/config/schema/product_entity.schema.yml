@@ -1,0 +1,7 @@
+block.settings.product_entity_product_block:
+  type: block_settings
+  label: 'Product Block block'
+  mapping:
+    foo:
+      type: string
+      label: Foo

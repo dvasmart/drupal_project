@@ -1,0 +1,21 @@
+uuid: b42d30e8-dc30-48e5-9b47-ff19e3500235
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.simple_entity.field_test_text_formated
+    - simple_entity.simple_entity_type.cde
+  module:
+    - text
+id: simple_entity.cde.field_test_text_formated
+field_name: field_test_text_formated
+entity_type: simple_entity
+bundle: cde
+label: 'test text formated'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text

@@ -1,0 +1,84 @@
+<?php
+
+/**
+ * @file
+ * Provides a product entity module entity type.
+ */
+
+use Drupal\Core\Render\Element;
+use Drupal\product_entity\Entity\ProductEntityModule;
+use Drupal\user\UserInterface;
+
+/**
+ * Implements hook_theme().
+ */
+function product_entity_theme() {
+  return [
+    'product_entity_module' => [
+      'render element' => 'elements',
+    ],
+  ];
+}
+
+/**
+ * Prepares variables for product entity module templates.
+ *
+ * Default template: product-entity-module.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing the product entity module information and any
+ *     fields attached to the entity.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function template_preprocess_product_entity_module(array &$variables) {
+  $variables['view_mode'] = $variables['elements']['#view_mode'];
+  foreach (Element::children($variables['elements']) as $key) {
+    $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Implements hook_user_cancel().
+ */
+function product_entity_user_cancel($edit, UserInterface $account, $method) {
+  switch ($method) {
+    case 'user_cancel_block_unpublish':
+      // Unpublish product entity modules.
+      $storage = \Drupal::entityTypeManager()->getStorage('product_entity_module');
+      $product_entity_module_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->condition('status', 1)
+        ->execute();
+      foreach ($storage->loadMultiple($product_entity_module_ids) as $product_entity_module) {
+        $product_entity_module->set('status', FALSE);
+        $product_entity_module->save();
+      }
+      break;
+
+    case 'user_cancel_reassign':
+      // Anonymize product entity modules.
+      $storage = \Drupal::entityTypeManager()->getStorage('product_entity_module');
+      $product_entity_module_ids = $storage->getQuery()
+        ->condition('uid', $account->id())
+        ->execute();
+      foreach ($storage->loadMultiple($product_entity_module_ids) as $product_entity_module) {
+        $product_entity_module->setOwnerId(0);
+        $product_entity_module->save();
+      }
+      break;
+  }
+}
+
+/**
+ * Implements hook_ENTITY_TYPE_predelete() for user entities.
+ */
+function product_entity_user_predelete(UserInterface $account) {
+  // Delete product entity modules.
+  $storage = \Drupal::entityTypeManager()->getStorage('product_entity_module');
+  $product_entity_module_ids = $storage->getQuery()
+    ->condition('uid', $account->id())
+    ->execute();
+  $product_entity_modules = $storage->loadMultiple($product_entity_module_ids);
+  $storage->delete($product_entity_modules);
+}

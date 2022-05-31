@@ -1,0 +1,6 @@
+name: Product Entity Module
+type: module 
+description: product_entity 9 Module
+package: Custom
+version: 1.0.1
+core_version_requirement: ^9

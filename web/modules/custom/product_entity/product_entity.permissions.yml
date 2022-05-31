@@ -1,0 +1,3 @@
+administer product entity module:
+  title: 'Administer product entity module settings'
+  restrict access: true
