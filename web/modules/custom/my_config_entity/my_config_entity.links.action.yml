@@ -1,0 +1,5 @@
+entity.my_config_entity.add_form:
+  route_name: 'entity.my_config_entity.add_form'
+  title: 'Add my config entity'
+  appears_on:
+    - entity.my_config_entity.collection

@@ -1,0 +1,12 @@
+uuid: fcafaf4b-9a06-425f-8110-9347adeedb51
+langcode: en
+status: true
+dependencies: {  }
+id: one_my_config_entity_
+label: 'One my config entity '
+description: ''
+type: plain_text
+plugins:
+  remove_bad_words: remove_bad_words
+  uc_first: uc_first
+  add_dots: add_dots

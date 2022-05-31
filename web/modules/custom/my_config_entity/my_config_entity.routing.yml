@@ -1,0 +1,31 @@
+entity.my_config_entity.collection:
+  path: '/admin/structure/my-config-entity'
+  defaults:
+    _entity_list: 'my_config_entity'
+    _title: 'My Config Entity configuration'
+  requirements:
+    _permission: 'administer my_config_entity'
+
+entity.my_config_entity.add_form:
+  path: '/admin/structure/my_config_entity/add'
+  defaults:
+    _entity_form: 'my_config_entity.add'
+    _title: 'Add a my config entity'
+  requirements:
+    _permission: 'administer my_config_entity'
+
+entity.my_config_entity.edit_form:
+  path: '/admin/structure/my-config-entity/{my_config_entity}'
+  defaults:
+    _entity_form: 'my_config_entity.edit'
+    _title: 'Edit a my config entity'
+  requirements:
+    _permission: 'administer my_config_entity'
+
+entity.my_config_entity.delete_form:
+  path: '/admin/structure/my-config-entity/{my_config_entity}/delete'
+  defaults:
+    _entity_form: 'my_config_entity.delete'
+    _title: 'Delete a my config entity'
+  requirements:
+    _permission: 'administer my_config_entity'

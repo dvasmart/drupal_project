@@ -1,0 +1,12 @@
+my_config_entity.my_config_entity.*:
+  type: config_entity
+  label: My Config Entity
+  mapping:
+    id:
+      type: string
+      label: ID
+    label:
+      type: label
+      label: Label
+    description:
+      type: string

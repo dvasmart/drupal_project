@@ -66,4 +66,29 @@ class TextCleanupService {
     return $text;
   }
 
+
+  public function cleanUpEntity(FieldableEntityInterface $entity) {
+    $storage = \Drupal::entityTypeManager()->getStorage('my_config_entity');
+    $configs = $storage->loadByProperties(['type' => $entity->bundle()]);
+    if (empty($configs)) {
+      return;
+    }
+    /** @var \Drupal\example\BeetrootExampleInterface $config */
+    $config = reset($configs);
+    $plugins = $config->getPlugins();
+
+    $pluginDefinitions = $this->manager->getDefinitions();
+    foreach ($entity->getFields() as $field) {
+      if ($field->getFieldDefinition()->getType() === 'text_long') {
+        $value = $entity->get($field->getName())->value;
+        foreach (array_filter($plugins) as $pluginId) {
+          /** @var \Drupal\example\TextCleanupInterface $plugin */
+          $plugin = $this->manager->createInstance($pluginId, $pluginDefinitions[$pluginId]);
+          $value = $plugin->cleanUp($value);
+        }
+        $entity->set($field->getName(), $value);
+      }
+    }
+  }
+
 }

@@ -1,0 +1,5 @@
+entity.my_config_entity.overview:
+  title: My Config Entities
+  parent: system.admin_structure
+  description: 'List of my config entities to extend site functionality.'
+  route_name: entity.my_config_entity.collection
