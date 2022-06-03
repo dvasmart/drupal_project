@@ -8,6 +8,7 @@
 use Drupal\Core\Render\Element;
 use Drupal\product_entity\Entity\ProductEntityModule;
 use Drupal\user\UserInterface;
+use Drupal\Core\Field\BaseFieldDefinition;
 
 /**
  * Implements hook_theme().
@@ -82,3 +83,5 @@ function product_entity_user_predelete(UserInterface $account) {
   $product_entity_modules = $storage->loadMultiple($product_entity_module_ids);
   $storage->delete($product_entity_modules);
 }
+
+
