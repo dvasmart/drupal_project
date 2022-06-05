@@ -47,6 +47,7 @@ module:
   layout_discovery: 0
   link: 0
   locale: 0
+  maillog: 0
   media: 0
   media_library: 0
   menu_link_content: 0
@@ -66,6 +67,7 @@ module:
   rdf: 0
   realistic_dummy_content: 0
   realistic_dummy_content_api: 0
+  reroute_email: 0
   responsive_image: 0
   search: 0
   serialization: 0
@@ -75,6 +77,9 @@ module:
   system: 0
   taxonomy: 0
   test: 0
+  test_one: 0
+  test_three: 0
+  test_two: 0
   text: 0
   token: 0
   toolbar: 0

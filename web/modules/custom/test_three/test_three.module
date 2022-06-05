@@ -1,0 +1,35 @@
+<?php
+
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\user\Entity\User;
+use Drupal\node\NodeInterface;
+use Drupal\node\Entity\Node;
+
+/**
+ * Implements hook_entity_insert().
+ */
+function test_three_entity_insert(EntityInterface $entity) {
+    if ($entity instanceof NodeInterface) {
+        /** @var \Drupal\Core\Mail\MailManagerInterface $mailManager */
+        $mailManager = \Drupal::service('plugin.manager.mail');
+        $user = Node::load($entity->id());
+        $module = 'test_three';
+        $key = 'update';
+        $to = \Drupal::currentUser()->getEmail();
+        $langcode = \Drupal::currentUser()->getPreferredLangcode();
+        $params['message'] = 'Created new node';
+        $params['new_user'] = $user->label();
+        $params['node_label'] = $entity->label();
+        $send = true;
+
+        $result = $mailManager->mail($module, $key, $to, $langcode, $params, null, $send);
+
+        if ($result['result'] !== true) {
+            \Drupal::messenger()->addMessage(t('There was a problem sending your message and it was not sent'),'error');
+        } else {        
+            \Drupal::messenger()->addMessage(t('There was a problem sending your message and it was not sent'),'status');
+        }
+        
+    }
+  }
+

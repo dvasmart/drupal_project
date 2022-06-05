@@ -1,0 +1,6 @@
+name: Test 1 One Module
+type: module 
+description: test_one - gen plugin:queue-worker for testing drupal queue
+package: Custom
+version: 1.0.0
+core_version_requirement: ^9

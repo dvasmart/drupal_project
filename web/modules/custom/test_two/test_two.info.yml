@@ -1,0 +1,6 @@
+name: Test 2 Two Module
+type: module 
+description: test_two - batch in form to generate entity
+package: Custom
+version: 1.0.0
+core_version_requirement: ^9

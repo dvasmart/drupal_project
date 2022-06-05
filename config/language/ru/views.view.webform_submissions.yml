@@ -22,6 +22,7 @@ display:
             offset_label: Пропустить
       fields:
         sid:
+          label: '#'
           separator: ', '
         in_draft:
           separator: ', '
@@ -47,6 +48,7 @@ display:
         webform_submission_bulk_form:
           action_title: Действие
         sid:
+          label: '#'
           separator: ', '
         in_draft:
           separator: ', '
@@ -80,6 +82,7 @@ display:
         webform_submission_bulk_form:
           action_title: Действие
         sid:
+          label: '#'
           separator: ', '
         in_draft:
           separator: ', '
@@ -115,6 +118,7 @@ display:
     display_options:
       fields:
         sid:
+          label: '#'
           separator: ', '
         in_draft:
           separator: ', '

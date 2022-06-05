@@ -9,6 +9,8 @@ use Drupal\Core\Render\Element;
 use Drupal\product_entity\Entity\ProductEntityModule;
 use Drupal\user\UserInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
+use Drupal\Core\Entity\EntityInterface;
+use Drupal\user\Entity\User;
 
 /**
  * Implements hook_theme().
@@ -84,4 +86,15 @@ function product_entity_user_predelete(UserInterface $account) {
   $storage->delete($product_entity_modules);
 }
 
+
+/**
+ * Implements hook_entity_insert().
+ */
+function product_entity_entity_insert(EntityInterface $entity) {
+  if ($entity instanceof User) {
+      $users = \Drupal::state()->get('registered_users', []);
+      $users[] = $entity->id();
+      \Drupal::state()->set('registered_users', $users);
+  }
+}
 

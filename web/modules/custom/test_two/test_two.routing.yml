@@ -1,0 +1,7 @@
+test_two.entity_generation:
+  path: '/test-two/entity-generation'
+  defaults:
+    _title: 'Generation entity article form using batch'
+    _form: 'Drupal\test_two\Form\EntityGenerationForm'
+  requirements:
+    _permission: 'access content'

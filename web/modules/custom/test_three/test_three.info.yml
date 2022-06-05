@@ -1,0 +1,6 @@
+name: Test 3 Three Module 
+type: module 
+description: test_three - sending email
+package: Custom
+version: 1.0.0
+core_version_requirement: ^9
