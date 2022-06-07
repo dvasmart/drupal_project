@@ -139,3 +139,53 @@ function product_entity_update_9105(&$sandbox) {
   \Drupal::entityDefinitionUpdateManager()
     ->installFieldStorageDefinition('flag', 'product_entity_module', 'product_entity', $storage_definition);
 }
+
+
+/**
+ * Add fourth test bool field to Product entity.
+ */
+function product_entity_update_9106(&$sandbox) {
+  $storage_definition = BaseFieldDefinition::create('boolean')
+    ->setLabel(t('Test Fourth Bool Field'))
+    ->setDefaultValue(TRUE)
+    ->setSetting('on_label', 'Some label')
+    ->setDisplayOptions('form', [
+      'type' => 'boolean_checkbox',
+      'settings' => [
+        'display_label' => TRUE,
+      ],
+      'weight' => 0,
+    ])
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayOptions('view', [
+      'type' => 'boolean',
+      'label' => 'above',
+      'weight' => 0,
+      'settings' => [
+        'format' => 'enabled-disabled',
+      ],
+    ])
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('test_fourth_bool_field', 'product_entity_module', 'product_entity', $storage_definition);
+}
+
+/**
+ * Set default value for test_fourth_bool_field field.
+ */
+function product_entity_update_9107(&$sandbox) {
+  if (!isset($sandbox['ids'])) {
+    $sandbox['ids'] = \Drupal::entityQuery('product_entity_module')->execute();
+  }
+  if (empty($sandbox['ids'])) {
+    $sandbox['#finished'] = 1;
+    return t('All items updated');
+  }
+  $id = array_shift($sandbox['ids']);
+  $entity = ProductEntityModule::load($id);
+  $entity->set('test_fourth_bool_field', TRUE);
+  $entity->save();
+  $sandbox['#finished'] = 0;
+  return t('@name updated.', ['@name' => $entity->label()]);
+}

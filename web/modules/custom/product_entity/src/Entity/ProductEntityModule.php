@@ -36,6 +36,7 @@ use Drupal\user\EntityOwnerTrait;
  *     }
  *   },
  *   base_table = "product_entity_module",
+ *   data_table = "product_entity_module_field_data",
  *   admin_permission = "administer product entity module",
  *   entity_keys = {
  *     "id" = "id",
